@@ -113,7 +113,7 @@ class Header extends Component {
               <div>
                 <Link className="nav-links underline-none" to="/watch/0">About Us</Link>
                 <Link className="nav-links underline-none" to="/tubeins">Blog</Link>
-                <Link className="nav-links underline-none" to="/account">Profile</Link>
+                {/* <Link className="nav-links underline-none" to="/account">Profile</Link> */}
                 <Link className="nav-links underline-none" to="/tube-manager">Contact Us</Link>
                 <a className="nav-links underline-none" href="http://www.mcaleicester.co.uk/if-the-lid-fits/tourer">Demo</a>
               </div>
