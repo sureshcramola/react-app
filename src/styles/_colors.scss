@@ -1,0 +1,329 @@
+$BgHeader : #425f9b;
+$BgMiddleBoard: linear-gradient(192deg, #E0E4F0, #E0E4F9 72%);
+$BgLeftSideBar:#6b7c93;
+$BgRightSideBar:rgba(246,249,252,1);
+$BGLeftCard:#2C3242 ;
+
+
+$modalLabelColor:#111111;
+$inputFocusBorder:#007bff;
+$secondaryButtonColor:#111111;
+$secondaryButtonBG:#E7E7E7;
+
+// Input Style
+$inputBorderColor:#dad8de;
+$inputFocusBorderColor:rgba(44,50,66,.95);
+$inputFocusTextColor:rgba(44, 50, 66, 0.75);
+$inputFieldColor:rgba(44,50,66,.35);
+$touchSpinBtnColor:rgba(44,50,66,.65);
+$placholderTextColor:rgba(44, 50, 66, 0.35);
+$listShowsPlacholderTextColor:#ffffff;
+
+// Tag style
+$reactTagsBG:rgba(214, 213, 213, 0.2);
+$reactTagsTextColor:rgba(44,50,66,.32);
+
+// Time Picker Style
+$timePickerActiveBG:rgba(44, 50, 66, 1);
+
+// Title,Tag & Description Style
+$tubeInTitleFontColor:rgba(44, 50, 66, 0.85);
+$tubeInTagChannelNameFontColor:rgba(44, 50, 66, 0.45);
+$tubeInDescriptionFontColor:rgba(44, 50, 66, 0.85);
+
+// Custom Alert style
+$cutomAlertTextColor:rgba(0,0,0,1);
+
+// Nav Link Style
+$NavLinksTextColor:#a9b3c7;
+$NavLinksTextColorOnHover:#ffffff;
+
+// Header Right bar when user signed in
+$userProfileBG:#6b7c93;
+$userProfileStatsIndicatorActiveBG:#5BD64E;
+$userNotificationIndicatorBG:#F5201D;
+$NavUserNameTextColor:rgba(44,50,66,1);
+$userProfileDropDownBG:#6b7c93;
+$userProfileDropDownLinkColor:#2C3242;
+$userProfileDropDownIconColor:rgba(44,50,66,.7);
+$userProfileDropDownLineBorder:rgba(44,50,66,.2);
+$userProfileDropDownHoverLinkBG:rgba(44,50,66,.5);
+
+
+// LeftSidebarGeneral style
+$leftSideBarGeneralHeadingColor:#d9bea3;
+$leftSideBarGeneralDescriptionColor:#6b7c93;
+
+// List shows style (ListScene)
+$listShowsBG:rgba(246,249,252,1);
+$listShowsTopBarActiveLinkColor:rgba(44,50,66,1);
+$listShowsTopBarInActiveLinkColor:rgba(44,50,66,.35);
+$listTabBorderColor:rgba(44,50,66,.34);
+$listTubeNumberColor:#d9bea3;
+$listTubeInfoBorderColor:rgba(217,190,163,0.5);
+$listTubeLabelColor:#ffffff;
+$listLiveIndicatorColor:#F5201D;
+$listLiveTextColor:#ffffff;
+$listUserImageBG:#00A3FB;
+$listTitleColor:rgba(44,50,66,1);
+$listTagColor:rgba(44,50,66,.65);
+$listFollowIconColor:#d9bea3;
+$listLeftInfoOverlayBG:rgba(0,0,0,.54);
+$listShowDateTextColor:#ffffff;
+$listShowTimeTextColor:#d9bea3;
+$listShowBottomInfoOverlay:rgba(0,0,0,.61);
+$listInputBG:rgba(0, 0, 0,.55);
+$listChatInputTextColor:#ffffff;
+
+
+
+// Profile Scene Style
+$profileSceneBG:rgba(246,249,252,1);
+
+// TubeManager style
+$tubeManagerBG:rgba(246,249,252,1);
+
+// TubeIn Request style
+$tubeinRequestCardBG:rgba(214,213,213,.2);
+$tubeinRequestCardImgBG:rgba(44,50,66,.5);
+$tubeinRequestTitleColor:rgba(44,50,66,1);
+$tubeinRequestLocationColor:rgba(44,50,66,1);
+$tubeinRequestDescriptionColor:rgba(44,50,66,.5);
+$tubeinPriceColor:rgba(44,50,66,1);
+$tubeinBorderColor:#D7D7D7;
+$tubeinCheckColor:#00AF2F;
+$tubeinCrossColor:#F5201D;
+$overlayUserImageList:rgba(44,50,66,.65);
+$deleteIconColor:#ffffff;
+$inviteeUserTextColor:rgba(44,50,66,1);
+$minLabelTextColor:rgba(44, 50, 66, 0.35);
+
+// Upload Card
+$fileBrowserBorderColor:#000;
+$fileIconColor:rgba(44,50,66,.75);
+$fileIconColorActive:rgba(44,50,66,1);
+// camera man user list
+$tubeinEmailBorderBottomColor:#E7E7E7;
+$tubeinUserImageBG:#EEECEC;
+
+// Poll Question
+$tubeinPollInputBG:#EEECEC;
+$tubeinPollOptionTextColor:rgba(44, 50, 66, 0.35);
+$tubeinPollOptionTextFocusColor:rgba(44, 50, 66, 0.75);
+$tubeinPollOptionAddIconColor:#212529;
+
+
+// card with no data info
+$subscriptionTextColor:rgba(44,50,66,1);
+$subscriptionCardBG:#ffffff;
+
+// Notification Tab Style
+$notificationCardBG:#ffffff;
+$notificationAcceptedCardBG:rgba(44,50,66,.05);
+$notificationUserBG:#00A3FA;
+$dropDownColor:#7f848d;
+
+$notificationBorderColor:#E0E0E0;
+$notificationTimeTextColor:#d9bea3;
+$notificationDateTextColor:rgba(44,50,66,.65);
+$notificationTitleTextColor:rgba(44,50,66,1);
+$notificationChannelNameTextColor:#8D8D8D;
+$notificationPendingStatusTextColor:#FF8F30;
+$notificationAcceptedStatusTextColor:#44AF36;
+$notificationDeclinedStatusTextColor:#F5201D;
+$notificationUserStatusTextColor:rgba(44,50,66,1);
+$notificationOnlineUserStatusBorderColor:#44AF36;
+$notificationOfflineUserStatusBorderColor:#F5201D;
+$notificationRightInfoTextColor:#8D8D8D;
+
+// Personal Profile tab styles
+$personalCardBG: #ffffff;//rgba(107,124,147,.1);
+$personalImageBG:#E0E4F0;
+$personalTitleColor:rgba(44,50,66,.85);
+$personalLabelColor:rgba(44,50,66,.85);
+$personalFieldValueColor:rgba(44,50,66,.35);
+$personalFieldValueHoverColor:rgba(44,50,66,.75);
+$personallDisableMessageColor:rgba(44,50,66,.85);
+
+// Payment Tab style
+$paymentSavedCardBG:#ffffff;
+$paymentTitleColor:rgba(44,50,66,.85);
+$paymentMethodTextColor:rgba(44,50,66,.45);
+$paymentAddCardBG:#ffffff;
+$paymentAddCardLabelTextColor:rgba(44,50,66,.25);
+$paymentAddCardValueTextColor:rgba(44,50,66,.45);
+
+$paymentTableHeaderTextColor:rgba(44,50,66,.85);
+$paymentTableLimitTextColor:rgba(44,50,66,.75);
+$paymentTableHeaderBGColor:rgba(107,124,147,.2);
+
+$paymentMessageTextColor:rgba(44,50,66,.1);
+$paymentTableBorderColor:rgba(44,50,66,.05);
+
+$paymentTableInfoTextColor:rgba(44,50,66,.55);
+$paymentTableEvenBGColor:rgba(255,255,255,1);
+$paymentTableOddBGColor:rgba(255,255,255,1);
+$radioBorderColor: rgba(44,50,66,1);
+$outline: #ffffff;
+$selected: rgba(44,50,66,1);
+$unselected: transparent;
+$whiteBG:#ffffff;
+
+
+// Channel Tab Style
+$passwordIconColor:rgba(44,50,66,.55);
+$channelImageBG:#D4F0FE;
+
+// Video Top Bar
+$videoTopBGWhenTubeIn:rgba(246,249,252,0);
+$videoTopConfirmBtnBG:#44AF36;
+$videoTopCancelBtnBG:#F5201D;
+$videoTopLevelBtnBG:rgba(44, 50, 66, .93);
+$videoTopHeadingTextColor:#44AF36;
+$videoTopHeadingTextColor1:rgba(44, 50, 66, 1);
+$videoLabelTextColor:rgba(44, 50, 66, 0.55);
+$videoBorder:rgba(44, 50, 66, 0.35);
+$videoDigitTextColor:rgba(44, 50, 66, 1);
+$videoBtnTextColor:#ffffff;
+$videoCounterBtnColor:rgba(44, 50, 66, .34);
+$videoCounterBorderColor:rgba(44,50,66,.34);
+$videoCounterTotalTextColor:rgba(44, 50, 66, .34);
+
+
+// Login,Forgot Password & Signup Modal
+$BGLoginSignupModal:rgba(246,249,252,1);
+$modalHeadingTextColor:rgba(44,50,66,0.8);
+$modalSubHeadingTextColor:rgba(44,50,66,0.65);
+$modalPlaceHolderColor:rgba(44,50,66,0.35);
+$modalInputTextColor:rgba(44,50,66,0.65);
+$modalCrossBtnColor:#d9bea3;
+$modalBottomLinksColor:#d9bea3;
+$modalCancelBtnTextColor:#d9bea3;
+
+// Tab color
+$tabActiveBG:rgba(246,249,252,1);
+$tabInactiveBG:rgba(246,249,252,1);
+$tabActiveTextColor:rgba(44,50,66,1);
+$tabInactiveTextColor:rgba(44,50,66,.35);
+
+$seeMoreBtnColor:#6b7c93;
+$borderBlackColor:rgba(0,0,0,.12);
+
+$buttonBG:#ee521c;
+$mainBtnTextColor:#ffffff;
+$redColor:#FF0000;
+$khakiColor:#d9bea3;
+$userCardBG:#2c3242;
+
+$inputFocusBorder:#485169;
+$inputTextColor:#433f4a;
+
+$BGModal:rgba(23,20,31,.6);
+
+$searchIconColor:#6e6779;
+
+$lightWhiteColor:#ffffff;
+$lightGreyColor:#dad8de;
+
+$borderColor:rgba(218,216,222,.15);
+$middleBoardBorderColor:rgba(218,216,222,.75);
+$btnHoverShadowColor:rgba(0, 0, 0, 0.8);
+
+$middleControlBtnBG:#E5E9F3;
+$middleControlBtnColor:#6b7c93;
+
+$videoTopBG:linear-gradient(192deg, #E0E4F0, #f6f9fc 42%);
+$videoBlackBG:rgba(0,0,0,1);
+$videoBG:rgba(0,0,0,1);
+$videoBottomBG:rgba(246,249,252,1);
+$videoMainControlIconColor:rgba(246,249,252,1);
+$videoMainControlIconColorOnHover:#d9bea3;
+$videoBottomTitle:rgba(44,50,66,0.8);
+$videoBottomSubTitle:rgba(44,50,66,0.55);
+$liveTextColor:#ffffff;
+$videoBottomDescription: rgba(44,50,66,0.85);
+$tubinBlue:#2c3242;
+
+$primaryBackgroundColor:black;
+$primaryDarkBackgroundColor:black;
+
+// Video Tab colors
+$videoTabInnerBG:rgba(246,249,252,1);
+$videoCellUserNameColor:#000000;
+$videoThumbnailBGColor:#565A64;
+$videoPlayBtnColor:#A4A6A8;
+$videoSliderSelectedBG:#B5B9BF;
+$videoSliderBG:#5B6E83;
+$videoSliderButtonBorder:#008CD4;
+$videoControlIconColor:#727C88;
+$videoSlideBtnTextColor:#D5D4D4;
+$videoSendSliderProgessBG:#F5201D;
+$videoSendSliderBG:#5B6E83;
+$videoSendButtonBG:rgba(107,124,147,.5);
+
+// Text Chat Tab colors
+$chatUserNameBG1:#CD3178;
+$chatUserNameBG2:#60D456;
+$chatUserNameBG3:#0078B4;
+$chatUserNameColor:#000;
+$chatDescriptionTextColor:#5F5F5F;
+$chatInputTextColor:#333333;
+$emojiColor:#FDCA47;
+
+$chatScrollBtnColor:#5F5F5F;
+
+// right Video Modal Colors
+$videoOverlayBG:rgba(0,0,0,.9);
+$modalVideoBG:#2c3242;
+$closeBtnBG: #2c3242;//#6b7c93;
+$videoControlBG:#6b7c93;
+$videoUserNameTextColor:#dad8de;
+$videoControlPlayBtnColor:#dad8de;
+
+// MyTubeInScene
+$mytubeinBGWrapper:rgba(246,249,252,1);
+$mytubeinLeftLineBorderBG:#6b7c93;
+$mytubeinDateInputBorderColor:#dad8de;
+$mytubeinDateInputFocusBorderColor:rgba(44,50,66,.95);
+$mytubeinDateInputTextColor:rgba(44,50,66,.85);
+$mytubeinTitleColor:rgba(44,50,66,.85);
+$mytubeinHeadLabelColor:rgba(44,50,66,1);
+$mytubeinHeadFieldTextColor:rgba(44,50,66,.92);
+$mytubeinToggleIndicatorBG:rgba(44,50,66,1);
+$mytubeinToggleIconIndicator:#d9bea3;
+$mytubeinToggleIconIndicatorBorder:rgba(246,249,252,1);
+$mytubeinCardTitleBG:rgba(107,124,147,.1);
+$mytubeinCardDateBG:rgba(107,124,147,.2);
+$mytubeinCardTitleTextColor:rgba(44,50,66,1);
+$mytubeinCardDateTextColor:rgba(44,50,66,1);
+$mytubeinCardDescriptionTitleTextColor:rgba(44,50,66,.8);
+$mytubeinCardDescriptionTextColor:rgba(44,50,66,.65);
+$mytubeinCardBodyBG:#ffffff;
+
+$mytubeinCardTubeTimeTextColor:#44AF36;
+$mytubeinCardShowTimeTextColor:#F5201D;
+$mytubeinOverlayBG:rgba(0,0,0,.6);
+$mytubeinCardBorderColor:rgba(44,50,66,.25);
+$mytubeinPlayIconColor:#d6d5d5;
+$mytubeinPlayIconHoverColor:#d9bea3;
+$mytubeinSubscribeIconColor:#d9bea3;
+$mytubeinShareIconColor:#d9bea3;
+$mytubeinVideoBG:#000000;
+$mytubeinBtnTitleColor:rgba(44,50,66,.9);
+
+// Calendar style
+$activeDateBG:rgba(44,50,66,.98);
+
+// Custom Dropdown Style
+$mytubeinDateInputBorderColor:#dad8de;
+$mytubeinDateInputFocusBorderColor:rgba(44,50,66,.95);
+$mytubeinDateInputTextColor:rgba(44,50,66,.85);
+
+$customDropdownBG:transparent;
+$customDropdownMenuBG:#ffffff;
+$customDropdownTextColor:rgba(44,50,66,.85);
+$customDropdownBorderColor:#dad8de;
+$customDropdownMenuBorderColor:rgba(44,50,66,.6);
+$customDropdownMenuHoverColor:rgba(44,50,66,.25);
+$customDropdownBorderColorHover:rgba(44,50,66,.85);
+$customDropdownShadow:rgba(182,182,182,.7);

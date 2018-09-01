@@ -1,0 +1,77 @@
+@mixin transition($string) {
+  -webkit-transition: $string;
+     -moz-transition: $string;
+       -o-transition: $string;
+          transition: $string;
+  }
+
+@mixin box-shadow($string) {
+  -webkit-box-shadow: $string;
+     -moz-box-shadow: $string;
+          box-shadow: $string;
+  }
+
+@mixin linear-gradient($startDirection, $color1, $color2) {
+  $endDirection: right;
+  @if $startDirection == right {
+    $endDirection: left;
+  }
+  background: $color1;
+  background: -webkit-linear-gradient(#{$startDirection}, #{$color1}, #{$color2});
+  background:    -moz-linear-gradient(#{$endDirection}, #{$color1}, #{$color2});
+  background:      -o-linear-gradient(#{$endDirection}, #{$color1}, #{$color2});
+  background:         linear-gradient(to #{$endDirection}, #{$color1}, #{$color2});
+  }
+
+@mixin animation($name, $string) {
+  -webkit-animation: $name $string;
+     -moz-animation: $name $string;
+      -ms-animation: $name $string;
+       -o-animation: $name $string;
+          animation: $name $string;
+  }
+
+@mixin animation-fill-mode($value) {
+  -webkit-animation-fill-mode: $value;
+     -moz-animation-fill-mode: $value;
+       -o-animation-fill-mode: $value;
+          animation-fill-mode: $value;
+  }
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+    }
+  @-moz-keyframes #{$name} {
+    @content;
+    }
+  @-ms-keyframes #{$name} {
+    @content;
+    }
+  @keyframes #{$name} {
+    @content;
+    }
+}
+
+@mixin wrap-text {
+  white-space: pre-wrap;
+  /* CSS3 */
+  white-space: -moz-pre-wrap;
+  /* Firefox */
+  white-space: -pre-wrap;
+  /* Opera <7 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* IE */
+}
+
+
+
+@mixin cellShadow {
+  border-radius: $borderRadius;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 #cfd7df;
+ -webkit-transition: box-shadow 150ms ease;
+ transition: box-shadow 150ms ease;
+}

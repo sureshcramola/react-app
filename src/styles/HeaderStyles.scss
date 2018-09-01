@@ -1,0 +1,261 @@
+@import 'commonStyle';
+$pad10:10px;
+$pad25:25px;
+.header-wrapper{
+  width: 100%;
+  height:50px;
+  background-color: $BgHeader;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding:0 10px;
+  position:relative;
+  font-family: $fontFamily;
+  .logo-wrap{
+    max-width: 80px;
+    display: inline-block;
+  }
+  .left-links{
+    padding-right:20px;
+    .nav-links{
+      color:$NavLinksTextColor;
+      font-size:$NavLinksFontSize;
+      padding-left: 30px;
+      font-weight: $fontMedium;
+      font-family:inherit;
+      &:hover,&:focus{
+        color:$NavLinksTextColorOnHover;
+      }
+    }
+  }
+  .user-detail-wrapper{
+    // width:200px;
+  }
+  .dropdown-card{
+    background:$userProfileDropDownBG;
+    width:$userProfileDropDownDimension;
+    padding:$pad10 0 $pad10;
+    position:absolute;
+    z-index:9;
+    right:0;
+    top:100%;
+    display:none;
+    .user-name{
+      display:inline-block;
+      color:$NavUserNameTextColor;
+      font-weight:$fontBold;
+      font-family:$fontFamily;
+      font-size:$userProfileDropDownLinkFontSize;
+      line-height:1;
+    }
+    ul{
+      padding: 0;
+      margin:0;
+      li{
+        list-style:none;
+        padding:15px 30px 15px 30px;
+        line-height:1;
+        position:relative;
+        &.first-child{
+          padding-top:0;
+        }
+        &.dropdown-link:hover{
+          background:$userProfileDropDownHoverLinkBG;
+        }
+        &.border-list{
+          border-color:$userProfileDropDownLineBorder;
+          border-width:0.5px 0 0.5px 0;
+          border-style:solid;
+          margin-bottom: 25px;
+        }
+        &.border-list-bottom{
+          &.list-gap-btm{
+            margin-bottom:10px;
+            padding:0;
+          }
+          &.list-gap-top{
+            margin-bottom:10px;
+            padding:0;
+            height:11px;
+          }
+          // margin-bottom: 25px;
+          &:after{
+            border-style:solid;
+            border-color:$userProfileDropDownLineBorder;
+            border-width:0 0 0.8px 0;
+            position:absolute;
+            bottom:0;
+            content: '';
+            width:80%;
+            left: 50%;
+            transform:translateX(-50%);
+          }
+        }
+        &:first-child{
+          padding-bottom:0;
+          margin-bottom:8px;
+
+        }
+      }
+      a,a:hover,a:focus{
+        text-decoration:none;
+        width: 100%;
+        display: inline-block;
+        outline:none;
+      }
+      .left-icon{
+        width:20%;
+        display: inline-block;
+      }
+      .profile-icon{
+        color: $userProfileDropDownIconColor;
+        font-size:$userProfileDropDownLinkFontSize + 2;
+      }
+      .link-text{
+        font-size:$userProfileDropDownLinkFontSize;
+        color:$userProfileDropDownLinkColor;
+      }
+      .status-text{
+        font-size:$userProfileDropDownLinkFontSize - 2;
+        color:$userProfileDropDownIconColor;
+        margin-left:-22px;
+      }
+      .status-icon{
+        display: inline-block;
+        margin-bottom: 2px;
+        font-size:$userProfileDropDownLinkFontSize - 7 ;
+        color:$userProfileStatsIndicatorActiveBG;
+      }
+    }
+  }
+
+  .dropdown-transition{
+    top:100%;
+    // -webkit-transform: translate3d(0,-100%,0);
+    // transform: translate3d(0,-100%,0);
+    // transition: -webkit-transform .2s ease;
+    // transition: transform .2s ease;
+    // transition: transform .2s ease,-webkit-transform .2s ease;
+    // visibility:hidden;
+  }
+  // .dropdown--toggled{
+  //   visibility: visible;
+  //   -webkit-transform: translateZ(0);
+  //   transform: translateZ(0);
+  //   transition: -webkit-transform .2s ease;
+  //   transition: transform .2s ease;
+  //   transition: transform .2s ease,-webkit-transform .2s ease;
+  // }
+  .user-profile-wrapper{
+    .notification-wrapper{
+      display:inline-block;
+      width:$userNotificationButtonDimension - 2;
+      height:$userNotificationButtonDimension + 3;
+      font-size:$userNotificationButtonDimension;
+      color:$NavLinksTextColor;
+      position:relative;
+      margin:0 20px 0 10px;
+      .bell-icon{
+        vertical-align:baseline;
+      }
+    }
+    .notification-indicator{
+      background:$userNotificationIndicatorBG;
+      display:inline-block;
+      width:$userNotificationDimension;
+      height:$userNotificationDimension;
+      border-radius:50%;
+      border:1px solid $userNotificationIndicatorBG;
+      position: absolute;
+      top: 3px;
+      right: 1px;
+      // -moz-animation: heartbit 1s ease-out;
+      // -moz-animation-iteration-count: infinite;
+      // -o-animation: heartbit 1s ease-out;
+      // -o-animation-iteration-count: infinite;
+      // -webkit-animation: heartbit 1s ease-out;
+      // animation-iteration-count: 1;
+      // -webkit-animation-iteration-count: infinite;
+      // animation-iteration-count: infinite;
+    }
+    button,button:hover,button:focus{
+      background:transparent;
+      outline:none;
+      border:none;
+      padding:0;
+    }
+    .user-name-span{
+      color:$NavUserNameTextColor;
+      font-size:$NavLinksFontSize;
+      padding-left: $pad10;
+      font-weight: $fontNormal;
+      font-family:inherit;
+      flex:1;
+    }
+    .user-profile-img{
+      width:$userProfileImgDimension;
+      height:$userProfileImgDimension;
+      background:$userProfileBG;
+      border-radius:50%;
+      border:1px solid $userProfileBG;
+      position:relative;
+      margin:0;
+      img{
+        width:100%;
+        height:100%;
+        border-radius:50%;
+      }
+      .user-status-indicator{
+        background:$userProfileStatsIndicatorActiveBG;
+        width:$userProfileStatsIndicatorDimension;
+        height:$userProfileStatsIndicatorDimension;
+        border-radius:50%;
+        border:1px solid $userProfileStatsIndicatorActiveBG;
+        position:absolute;
+        right:-2px;
+        top:3px;
+        z-index:1;
+      }
+    }
+  }
+  .rightBar{
+    flex:1;
+  }
+  .search-input-wrap{
+    max-width: 400px;
+    z-index: 10;
+    position: relative;
+    margin: 0 10px;
+    width:100%;
+    .icon-wrap{
+      position:absolute;
+      width:30px;
+      height:100%;
+      top: 0;
+      left: 0;
+      color:$searchIconColor;
+      padding:4px 7px;
+    }
+    input{
+      width: 100%;
+      border: none;
+      border-radius: 2px;
+      padding:6px 5px 6px 30px;
+      font-size: $fontSizeInput;
+      font-weight: $fontNormal;
+      color:$inputTextColor;
+      &:focus{
+        border-color: $inputFocusBorder;
+        box-shadow: 0 0 6px -2px $inputFocusBorder;
+      }
+    }
+  }
+  .user-login-signup-wrapper{
+    button{
+      width:67px;
+      &:first-child{
+        margin-right:10px;
+      }
+    }
+  }
+}

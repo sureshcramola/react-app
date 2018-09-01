@@ -1,0 +1,12 @@
+.main-btn{
+  background-color: red;
+  &.tube-chat-btn[disabled=""]{
+    opacity:.7;
+  }
+  &.tube-chat-btn:hover{
+    transform: translateY(0px) !important;
+    -webkit-transform: translateY(0px) !important;
+    -ms-transform: translateY(0px) !important;
+    box-shadow:none;
+  }
+}

@@ -1,0 +1,166 @@
+import React, { Component } from 'react'
+
+import '../styles/ScoreboardStyle.scss'
+
+
+class Scoreboard extends Component {
+  constructor (props) {
+    super(props)
+
+
+  }
+
+  componentDidMount() {
+  }
+
+  componentWillMount () {
+
+  }
+
+  render () {
+    const {width,height} = this.props;
+    return (
+      <div className='scoreboard-wrapper99999999999' style={{'width': width, 'height': height }}>
+
+      </div>
+    )
+  }
+}
+
+
+
+
+
+export default Scoreboard
+
+
+
+import React, { Component } from 'react'
+
+import '../styles/SlateStyle.scss'
+
+
+class Slate extends Component {
+  constructor (props) {
+    super(props)
+
+    this.getStyle = this.getStyle.bind(this)
+
+
+  }
+
+
+
+  componentWillMount () {
+
+  }
+
+  // use for calculated styles based on props
+  getStyle(x){
+    return {
+      header:{
+        height: x/3 + 'px',
+        fontSize: '12px'
+      },
+      video:{
+
+      }
+    }
+  }
+
+  render () {
+    // get calculated styles based on props
+    let styles = this.getStyle(this.props.width)
+
+    return (
+      <div className='slate-wrapper'>
+        {/* sample use of calculated styles */}
+        <div className='header active' style={styles.header}></div>
+        <div className='drops-and-video'>
+          <div className='drops'></div>
+          <div className='video'></div>
+        </div>
+        <div className='text-input'></div>
+        <div className='bottom-controls'></div>
+
+      </div>
+    )
+  }
+}
+
+
+
+
+
+export default Slate
+
+
+
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import '../styles/DashboardStyle.scss'
+import Scoreboard from '../components/Scoreboard'
+import Slate from '../components/Slate'
+
+
+class DashboardScene extends Component {
+  constructor (props) {
+    super(props)
+    this.state ={
+      firstName: 'Devendra',
+      res: []
+    }
+  }
+
+  componentDidMount() {
+      fetch('https://randomuser.me/api/')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          res: data.results
+        });
+
+        console.log(data);
+      });
+  }
+
+
+  componentWillMount () {
+
+  }
+
+  render () {
+    const {firstName,res} = this.state;
+    console.log(res.length);
+    let d = '';
+
+
+    return (
+      <div>
+        <h1>Task 1 and 1{firstName}</h1>
+        <h2>Slate</h2>
+        <div className='dashboard'>
+          <Slate width={300}/>
+        </div>
+        <h2>Scoreboard</h2>
+        {
+          res.length > 0 &&
+          res.map(function (i) {
+            d += '<h2>' + i.name.title + ' ' + i.name.first + ' ' + i.name.last  + '</h2>';
+          })
+        }
+        {d}
+        <div className='dashboard'>
+          <Scoreboard width={6600} height={1200}/>
+        </div>
+    </div>
+    )
+  }
+}
+
+
+
+
+
+export default DashboardScene

@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700');
+$fontFamily: 'Montserrat', sans-serif;
+$digitFontFamily:'Arimo', sans-serif;
+$fontSizeBtn:13px;
+$fontSizeHeaderBtn:12px;
+$fontSizeInput:12px;
+$btnRadius:3px;
+$pad10:10px;
+$borderRadius:4px;
+
+$tubeinInputFontSize:13px;
+$touchSpinBtnFontSize:17px;
+$tabGapTop:30px;
+
+$tubeInTitleFontSize:15px;
+$tubeInTagChannelNameFontSize:13px;
+$tubeInDescriptionFontSize:13px;
+
+// Tag style
+$reactTagFontSize:13px;
+
+// Font Weights
+$fontLight:300;
+$fontNormal:400;
+$fontMedium:500;
+$fontSemiBold:600;
+$fontBold:700;
+
+// Nav Links Font Sizes
+$NavLinksFontSize:12px;
+
+$heightTabVideoTop:55px;
+
+// Custom Alert style
+$cutomAlertMessageFontSize:14px;
+
+// Header Right bar when user signed in
+$userProfileImgDimension:32px;
+$userProfileStatsIndicatorDimension:8px;
+$userNotificationButtonDimension:27px;;
+$userNotificationDimension:8px;
+$userProfileDropDownDimension:249px;
+$userProfileDropDownLinkFontSize:16px;
+
+// LeftSidebarGeneral style
+$leftSideBarGeneralHeadingFontSize:14px;
+$leftSideBarGeneralDescriptionFontSize:12px;
+
+// List shows style (ListScene)
+$listShowsTopBarLinkFontSize:16px;
+$listTubeNumberFontSize:14px;
+$listTubeLabelFontSize:11px;
+$listLiveTextFontSize:12px;
+$listTitleFontSize:15px;
+$listTagFontSize:13px;
+$listFollowIconFontSize:18px;
+$userListImageDimension:40px;
+$listShowDateFontSize:13px;
+$listShowTimeFontSize:16px;
+$listInputFontSize:13px;
+
+// Video Top Bar
+$videoTopConfirmBtnBG:#06B032;
+$videoTopCancelBtnBG:#F5201D;
+$videoTopHeadingFontSize:16px;
+$videoDigitFontSize:16px;
+$videoLabelTextFontSize:13px;
+$btnVideoWidth:105px;
+$videoCounterBtnFontSize:10px;
+$videoCounterTotalTextFontSize:15px;
+
+// Tab Font Sizes
+$tabButtonFontSize:16px;
+
+$videoMainIconFontSize:18px;
+
+// Login & Signup Modal
+$modalHeadingFontSize:20px;
+$modalSubHeadingFontSize:15px;
+$modalInputTextFontSize:14px;
+$modalCrossBtnFontSize:24px;
+$modalBottomLinksFontSize:13px;
+$modalCrossBtnWidth:24px;
+
+// Main Video
+$liveTextFontSize:17px;
+
+// User Card Variables
+$userNameFontSize:16px;
+$userDescriptionFontSize:13px;
+$userInfoDigitFontSize:17px;
+$userInfoTypeFontSize:11px;
+
+// video bottom Card Variables
+$videBottomTitleFontSize:17px;
+$videBottomSubTitleFontSize:15px;
+$videBottomDescriptionFontSize:15px;
+
+// Video Tab Variables
+$videoCellUserName:12px;
+$borderRadiusUserBlock:12px;
+$tabsHeight:55px;
+$tabsBigHeight:40px;
+$tabButtonLargeFontSize:16px;
+$videoPlayBtnFontSize:9px;
+$videoSendBtnFontSize:13px;
+$videoModalCloseBtnWidth:35px;
+$videoModalCloseBtnHeight:35px;
+$videoControlPlayBtnFontSize:15px;
+$videoControlTimeFontSize:11px;
+
+
+// Text Chat Tab Variables
+$chatUserNameFontSize:10px;
+$chatDescriptionFontSize:14px;
+$chatInputBoxFontSize:13px;
+$emojiFontSize:26px;
+
+$chatScrollBtnFontSize:14px;
+
+// Profile Scene Style
+$subscriptionTextFontSize:14px;
+
+// Notification Tab Style
+
+$notificationTimeTextFontSize:12px;
+$notificationDateTextFontSize:10px;
+$notificationTitleTextFontSize:16px;
+$notificationChannelNameFontSize:14px;
+$notificationStatusFontSize:13px;
+$notificationOnlineUserStatusFontSize:13px;
+$notificationUserStatusTextFontSize:13px;
+$notificationRightInfoTextFontSize:13px;
+
+// Personal Profile tab styles
+$personalImgDimension:120px;
+$personalTitleFontSize:16px;
+$personalLabelFontSize:13px;
+$personalFieldValueFontSize:13px;
+$personalBtnWidth:130px;
+$personalDisableMessageFontSize:13px;
+
+// Payment Tab style
+$paymentTitleFontSize:15px;
+$paymentMethodTextFontSize:13px;
+$paymentAddTextFontSize:13px;
+$paymentTableHeaderTextFontSize:13px;
+$paymentTableHeaderIconFontSize:12px;
+$paymentTableInfoTextFontSize:13px;
+$paymentMessageFontSize:13px;
+
+// Channel Tab style
+$channelUserImageDimension:125px;
+
+// TubeIn Request style
+$tubeinRequestTitleFontSize:14px;
+$tubeinRequestLocationFontSize:11px;
+$tubeinRequestDescriptionFontSize:11px;
+$tubeinPriceFontSize:13px;
+$tubeinTimeFontSize:13px;
+$tubeinNotificationTimeFontSize:11px;
+$tubeinActionButtonFontSize:18px;
+$minLabelTextFontSize:13px;
+
+// Camera Man and Invite User Font Size
+$inviteeUserFontSize:13px;
+
+// Upload Card
+$fileIconFontSize:19px;
+
+// Poll Question
+$tubeinPollOptionTextFontSize:13px;
+$tubeinPollOptionAddIconFontSize:17px;
+
+$middleControlBtnFontSize:34px;
+$btnHeight:35px;
+
+$seeMoreBtnFontSize:14px;
+
+// MyTubeInScene
+$mytubeinTitleFontSize:18px;
+$mytubeinDateInputFontSize:13px;
+$mytubeinHeadLabelFontSize:13px;
+$mytubeinHeadFieldFontSize:14px;
+$mytubeinToggleIndicatorFontSize:18px;
+$mytubeinCardTitleFontSize:15px;
+$mytubeinCardDateFontSize:15px;
+$mytubeinCardDescriptionTitleFontSize:13px;
+$mytubeinCardDescriptionTextFontSize:12px;
+$mytubeinCardTubeTimeTextFontSize:13px;
+$mytubeinPlayIconFontSize:17px;
+$mytubeinShareIconFontSize:18px;
+$mytubeinBtnTitleFontSize:11px;
+// media queries
+$smallScreen: 1400px;
+$regularScreen: 'only screen and (min-width: 1401px) and (max-width: 1650px)';
+$largeScreen: 'only screen and (min-width: 1651px)';
+$smallScreenTabDifference:10px;
+$regularScreenTabDifference:10px;
+
+// Custom Dropdoen Font-size
+$customDropdownFontSize:13px;

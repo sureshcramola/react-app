@@ -1,0 +1,18 @@
+@import 'commonStyle';
+$pad10:10px;
+$pad25:25px;
+footer{
+  width: 100%;
+  background-color: $BgHeader;
+  padding:10px 0;
+  position:relative;
+  font-family: $fontFamily;
+  p{
+    font-family:inherit;
+    color:$NavLinksTextColor;
+    font-size:$NavLinksFontSize;
+    font-weight: $fontMedium;
+    margin-bottom:0;
+    text-align:left;
+  }
+}

@@ -1,0 +1,15 @@
+@import 'commonStyle';
+.modal-content{
+  border-radius:0 15px 0 15px!important;
+  border:0!important;
+  font-family:$fontFamily;
+  .modal-title{
+    text-transform:uppercase;
+  }
+  label{
+    font-size:13px;
+    font-family:$fontFamily;
+    font-weight:$fontNormal;
+    color:$modalLabelColor;
+  }
+}
