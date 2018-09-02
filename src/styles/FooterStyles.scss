@@ -3,13 +3,13 @@ $pad10:10px;
 $pad25:25px;
 footer{
   width: 100%;
-  background-color: $BgHeader;
-  padding:10px 0;
+  background-color: $BgFooter;
+  padding:20px 0;
   position:relative;
   font-family: $fontFamily;
-  p{
+  .contact-details{
     font-family:inherit;
-    color:$NavLinksTextColor;
+    color:$BGFooterTextColor;
     font-size:$NavLinksFontSize;
     font-weight: $fontMedium;
     margin-bottom:0;

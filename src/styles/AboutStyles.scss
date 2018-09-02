@@ -1,0 +1,15 @@
+@import 'commonStyle';
+$pad10:10px;
+$pad25:25px;
+.about-wrapper{
+    padding:60px 0 135px;
+}
+.about-content p{
+    margin-bottom: 35px;
+}
+.about-content h4{
+    color: #ff8500;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 30px;
+}

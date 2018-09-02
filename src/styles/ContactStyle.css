@@ -371,14 +371,19 @@ input:-moz-placeholder, textarea::-moz-placeholder {
   font-weight: bold;
   margin-bottom: 60px; }
 
-.modal-content {
-  border-radius: 0 15px 0 15px !important;
-  border: 0 !important;
-  font-family: "Montserrat", sans-serif; }
-  .modal-content .modal-title {
-    text-transform: uppercase; }
-  .modal-content label {
-    font-size: 13px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    color: #111111; }
+.contact-wrapper {
+  padding: 60px 0 135px; }
+
+.contact-row .form-wrapper {
+  padding-right: 80px; }
+
+.contact-row .form-group {
+  margin-bottom: 35px; }
+
+.contact-row input, .contact-row textarea {
+  width: 100%;
+  border-width: 0 0 1px 0;
+  border-color: #c3c3c3; }
+
+.contact-row textarea {
+  resize: vertical; }

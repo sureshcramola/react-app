@@ -109,15 +109,13 @@ class Header extends Component {
             <input type="text" placeholder="Search" className="search-input form-input" />
           </div> */}
           <div className="left-links">
-            <Router>
-              <div>
-                <Link className="nav-links underline-none" to="/watch/0">About Us</Link>
-                <Link className="nav-links underline-none" to="/tubeins">Blog</Link>
-                {/* <Link className="nav-links underline-none" to="/account">Profile</Link> */}
-                <Link className="nav-links underline-none" to="/tube-manager">Contact Us</Link>
-                <a className="nav-links underline-none" href="http://www.mcaleicester.co.uk/if-the-lid-fits/tourer">Demo</a>
-              </div>
-            </Router>
+            <div>
+              <Link className="nav-links underline-none" to="/about">About Us</Link>
+              <Link className="nav-links underline-none" to="/blog">Blog</Link>
+              {/* <Link className="nav-links underline-none" to="/account">Profile</Link> */}
+              <Link className="nav-links underline-none" to="/contact">Contact Us</Link>
+              <a className="nav-links underline-none" href="http://www.mcaleicester.co.uk/if-the-lid-fits/tourer">Demo</a>
+            </div>
           </div>
 
           <div className={`user-profile-wrapper ${isUserLoggedIn ? 'd-flex flex-row align-items-center show' : 'hide'}`}>

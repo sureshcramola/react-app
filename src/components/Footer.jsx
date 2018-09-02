@@ -8,13 +8,22 @@ class Footer extends Component {
     render() {
         return(
             <footer>
-                <div className="container-fluid">
+                <div className="container">
                     <div className="row">
-                        <div className="col-xs-12 col-sm-6 col-md-6">
-                            <p>&copy; Copyright 2018. All rights reserved</p>
+                        <div className="col-xs-12 col-sm-12 col-md-3">
+                            <div className="contact-details">
+                                <span className="phone-icon"></span> (336) 298-1377
+                            </div>
                         </div>
-                        <div className="col-xs-12 col-sm-6 col-md-6">
-
+                        <div className="col-xs-12 col-sm-12 col-md-3">
+                            <div className="contact-details">
+                                <span className="envelope-icon"></span> sales@kasybite.us
+                            </div>
+                        </div>
+                        <div className="col-xs-12 col-sm-12 col-md-6">
+                            <div className="contact-details text-right">
+                                {/* EasyBite is a trademark of Think Elements LLC. All rights reserved. */}
+                            </div>
                         </div>
                     </div>
                 </div>
