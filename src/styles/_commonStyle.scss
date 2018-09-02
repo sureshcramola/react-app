@@ -402,3 +402,9 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
   font-weight:bold;
   margin-bottom:60px;
 }
+.modal-link{
+  font-size:14px;
+  font-family:$fontFamily;
+  color: #1a88d4;
+  cursor: pointer;
+}

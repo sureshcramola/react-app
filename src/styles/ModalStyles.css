@@ -371,6 +371,12 @@ input:-moz-placeholder, textarea::-moz-placeholder {
   font-weight: bold;
   margin-bottom: 60px; }
 
+.modal-link {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #1a88d4;
+  cursor: pointer; }
+
 .modal-content {
   border-radius: 0 15px 0 15px !important;
   border: 0 !important;
@@ -382,3 +388,13 @@ input:-moz-placeholder, textarea::-moz-placeholder {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     color: #111111; }
+  .modal-content .forgot-icon {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background: #ff8500;
+    border-radius: 50%; }
+
+.modal-dialog.modal-container {
+  max-width: 630px;
+  width: 100%; }

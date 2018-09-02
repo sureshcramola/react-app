@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import { connect } from 'react-redux'
 import '../styles/HeaderStyles.css'
 import '../styles/ModalStyles.css'
+import '../styles/ContactStyle.css'
 import logoImage from '../images/logoh.png'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
@@ -16,30 +17,102 @@ class Header extends Component {
     super(props)
     this.state = {
       isUserProfileCardOpen:false,
-      showLoginModal:false,
-      showSignupModal:false
+      loginModalVisibility:false,
+      signupModalVisibility:false,
+      forgotModalVisibility:false
     }
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
     this.toggleSignupModal = this.toggleSignupModal.bind(this);
+    this.toggleForgotModal = this.toggleForgotModal.bind(this);
+    this.modalSwap = this.modalSwap.bind(this);
   }
 
-  // Toggle Login Modal based on showLoginModal State
+  // Toggle Login Modal based on loginModalVisibility State
   toggleLoginModal(){
     this.setState({
-      showLoginModal:!this.state.showLoginModal
+      loginModalVisibility:!this.state.loginModalVisibility
     })
   }
 
   toggleSignupModal(){
     this.setState({
-      showSignupModal:!this.state.showSignupModal
+      signupModalVisibility:!this.state.signupModalVisibility
     })
   }
 
-  renderLoginModal() {
-    if (this.state.showLoginModal) {
+  toggleForgotModal(){
+    this.setState({
+      forgotModalVisibility:!this.state.forgotModalVisibility
+    })
+  }
+
+  modalSwap(modalName){
+    switch(modalName) {
+      case 'login':
+        this.setState({
+          loginModalVisibility:true,
+          signupModalVisibility:false,
+          forgotModalVisibility:false
+        })
+        break;
+      case 'signup':
+        this.setState({
+          loginModalVisibility:false,
+          signupModalVisibility:true,
+          forgotModalVisibility:false
+        })
+        break;
+      case 'forgot':
+        this.setState({
+          loginModalVisibility:false,
+          signupModalVisibility:false,
+          forgotModalVisibility:true
+        })
+        break;
+     
+      default:
+        this.setState({
+          loginModalVisibility:false,
+          signupModalVisibility:false,
+          forgotModalVisibility:false
+        })
+        break;
+  }
+  }
+
+  renderForgotModal() {
+    if (this.state.forgotModalVisibility) {
       return (
-        <Modal isOpen={this.state.showLoginModal} className="" centered="true">
+        <Modal isOpen={this.state.forgotModalVisibility} className="modal-container" centered="true">
+          <ModalBody>
+            <div className="text-center">
+              <span className="forgot-icon">
+
+              </span>
+              <h4>Forgot Your Password ?</h4>
+              <p>No worries ! Enter yout email and we will send you a reset link</p>
+            </div>
+            <div className="row">
+              <div className="form-group col-md-12">
+                <label className="width-100">Email:</label>
+                <input type="text" value={this.state.name} onChange={this.handleChangeName}  />
+              </div>
+            </div>
+            
+          </ModalBody>
+          <ModalFooter>
+            <input type="submit" value="Submit" color="primary" className="button-primary" />
+            <button color="danger"  onClick={(e) => this.modalSwap('login')}  className="button-secondary">Cancel</button>
+          </ModalFooter>
+        </Modal>
+      );
+    }
+  }
+
+  renderLoginModal() {
+    if (this.state.loginModalVisibility) {
+      return (
+        <Modal isOpen={this.state.loginModalVisibility} className="" centered="true">
           <ModalHeader>Login</ModalHeader>
           <ModalBody>
             <div className="row">
@@ -55,9 +128,14 @@ class Header extends Component {
               </div>
             </div>
           </ModalBody>
-          <ModalFooter>
-            <input type="submit" value="Submit" color="primary" className="button-primary" />
-            <button color="danger" onClick={this.toggleLoginModal}  className="button-secondary">Cancel</button>
+          <ModalFooter className="flex-row justify-content-between">
+            <div className="">
+              <span className="modal-link" onClick={(e) => this.modalSwap('forgot')}>Forgot Password ?</span>
+            </div>
+            <div className="text-right">
+              <input type="submit" value="Submit" color="primary" className="button-primary mr-3" />
+              <button color="danger" onClick={this.toggleLoginModal}  className="button-secondary">Cancel</button>
+            </div>
           </ModalFooter>
         </Modal>
       );
@@ -65,9 +143,9 @@ class Header extends Component {
   }
 
   renderSignupModal() {
-    if (this.state.showSignupModal) {
+    if (this.state.signupModalVisibility) {
       return (
-        <Modal isOpen={this.state.showSignupModal} className="" centered="true" backdrop="false">
+        <Modal isOpen={this.state.signupModalVisibility} className="" centered="true" backdrop="false">
           <ModalHeader>Signup</ModalHeader>
           <ModalBody>
             <div className="row">
@@ -201,8 +279,9 @@ class Header extends Component {
             <button className="main-btn-sm" onClick={this.toggleLoginModal}>Log in</button>
             <button className="main-btn-sm" onClick={this.toggleSignupModal}>Sign up</button>
           </div>
-          {this.state.showLoginModal ? this.renderLoginModal() : ''}
-          {this.state.showSignupModal ? this.renderSignupModal() : ''}
+          {this.state.loginModalVisibility ? this.renderLoginModal() : ''}
+          {this.state.signupModalVisibility ? this.renderSignupModal() : ''}
+          {this.state.forgotModalVisibility ? this.renderForgotModal() : ''}
         </div>
       </div>
     )

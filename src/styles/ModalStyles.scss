@@ -12,4 +12,15 @@
     font-weight:$fontNormal;
     color:$modalLabelColor;
   }
+  .forgot-icon{
+    display: inline-block;
+    width:70px;
+    height:70px;
+    background:#ff8500;
+    border-radius:50%;
+  }
+}
+.modal-dialog.modal-container{
+  max-width:630px;
+  width:100%;
 }

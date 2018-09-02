@@ -371,6 +371,12 @@ input:-moz-placeholder, textarea::-moz-placeholder {
   font-weight: bold;
   margin-bottom: 60px; }
 
+.modal-link {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #1a88d4;
+  cursor: pointer; }
+
 .contact-wrapper {
   padding: 60px 0 135px; }
 
