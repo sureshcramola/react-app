@@ -8,16 +8,16 @@ class Footer extends Component {
     render() {
         return(
             <footer>
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row">
                         <div className="col-xs-12 col-sm-12 col-md-3">
                             <div className="contact-details">
-                                <span className="phone-icon"></span> (336) 298-1377
+                               &copy; Copyright 2018. All rights reserved.
                             </div>
                         </div>
                         <div className="col-xs-12 col-sm-12 col-md-3">
                             <div className="contact-details">
-                                <span className="envelope-icon"></span> sales@kasybite.us
+                                
                             </div>
                         </div>
                         <div className="col-xs-12 col-sm-12 col-md-6">

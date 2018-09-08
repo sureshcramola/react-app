@@ -83,19 +83,22 @@ class Header extends Component {
   renderForgotModal() {
     if (this.state.forgotModalVisibility) {
       return (
-        <Modal isOpen={this.state.forgotModalVisibility} className="modal-container" centered="true">
+        <Modal isOpen={this.state.forgotModalVisibility} className="modal-forget" centered="true">
           <ModalBody>
             <div className="text-center">
               <span className="forgot-icon">
 
               </span>
-              <h4>Forgot Your Password ?</h4>
-              <p>No worries ! Enter yout email and we will send you a reset link</p>
+              <h4 className="forget-title">Forgot Your Password ?</h4>
+              <p className="forget-subtitle">No worries ! Enter yout email and we will send you a reset link</p>
             </div>
             <div className="row">
-              <div className="form-group col-md-12">
-                <label className="width-100">Email:</label>
-                <input type="text" value={this.state.name} onChange={this.handleChangeName}  />
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label className="width-100">Email:</label>
+                  <input type="text" value={this.state.name} onChange={this.handleChangeName}  className="border-input"/>
+                  <span className="focus-border"></span>
+                </div>
               </div>
             </div>
             
@@ -116,15 +119,21 @@ class Header extends Component {
           <ModalHeader>Login</ModalHeader>
           <ModalBody>
             <div className="row">
-              <div className="form-group col-md-12">
-                <label>Username/Email Id:</label>
-                <input type="text" value={this.state.name} onChange={this.handleChangeName} className="form-control" />
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Username/Email Id:</label>
+                  <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" />
+                  <span className="focus-border"></span>
+                </div>
               </div>
             </div>
             <div className="row">
-              <div className="form-group col-md-12">
-                <label>Password:</label>
-                <input type="text" value={this.state.team} onChange={this.handleChangeTeam} className="form-control" />
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Password:</label>
+                  <input type="text" value={this.state.team} onChange={this.handleChangeTeam} className="border-input" />
+                  <span className="focus-border"></span>
+                </div>
               </div>
             </div>
           </ModalBody>
@@ -149,15 +158,21 @@ class Header extends Component {
           <ModalHeader>Signup</ModalHeader>
           <ModalBody>
             <div className="row">
-              <div className="form-group col-md-12">
-                <label>Username/Email Id:</label>
-                <input type="text" value={this.state.name} onChange={this.handleChangeName} className="form-control" />
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Username/Email Id:</label>
+                  <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" />
+                  <span className="focus-border"></span>
+                </div>
               </div>
             </div>
             <div className="row">
-              <div className="form-group col-md-12">
-                <label>Password:</label>
-                <input type="text" value={this.state.team} onChange={this.handleChangeTeam} className="form-control" />
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Password:</label>
+                  <input type="text" value={this.state.team} onChange={this.handleChangeTeam} className="border-input" />
+                  <span className="focus-border"></span>
+                </div>
               </div>
             </div>
           </ModalBody>

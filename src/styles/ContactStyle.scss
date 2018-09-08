@@ -2,7 +2,7 @@
 $pad10:10px;
 $pad25:25px;
 .contact-wrapper{
-    padding:60px 0 135px;
+    padding:60px 0;
 }
 .contact-row{
     .form-wrapper{
@@ -15,6 +15,7 @@ $pad25:25px;
         width:100%;
         border-width:0 0 1px 0;
         border-color:#c3c3c3;
+        border-style:solid;
     }
     textarea{
         resize:vertical;

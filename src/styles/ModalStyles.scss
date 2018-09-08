@@ -5,6 +5,18 @@
   font-family:$fontFamily;
   .modal-title{
     text-transform:uppercase;
+    color: #002e47;
+    font-family: $fontFamily;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .forget-title{
+    color: #002e47;
+    font-family: $fontFamily;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 15px;
   }
   label{
     font-size:13px;
@@ -19,8 +31,15 @@
     background:#ff8500;
     border-radius:50%;
   }
+  .forget-subtitle {
+    color: #262626;
+    font-family: $fontFamily;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 17%;
+    margin-bottom:25px;
+  }
 }
-.modal-dialog.modal-container{
-  max-width:630px;
-  width:100%;
+.modal-dialog.modal-forget{
+  
 }

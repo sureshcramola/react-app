@@ -31,13 +31,13 @@ class Contact extends Component {
                             </div>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-6">
-                            <div className="contact-description">
-                                dsadsa welcomes your questions or comments regarding this Statement of Privacy. If you believe
-                            </div>
-                            <div className="contact-info">
-
+                            <div className="map-wrapper">
+                                
                             </div>
                         </div>
+                    </div>
+                    <div className="text-left">
+                        <button className="button-primary">Submit</button>
                     </div>
                 </div>
             </div>

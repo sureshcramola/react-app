@@ -50,15 +50,8 @@ $pad5:5px;
   background-color:$secondaryButtonBG;
   color:$secondaryButtonColor;
 }
-.see-more-less-btn{
-  font-size: $seeMoreBtnFontSize;
-  font-weight: $fontNormal;
-  border-width: 0px;
-  font-family: $fontFamily;
-  background:transparent;
-  color:$seeMoreBtnColor;
-  padding:$pad5 0 0;
-}
+
+
 .main-btn-sm{
   @extend .main-btn;
   padding: 0px 0px;
@@ -203,118 +196,45 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
 }
 
 
-.card-data-information{
-  border-radius:$borderRadius;
-  padding:$pad40 $pad20;
-  background:$subscriptionCardBG;
-  width:100%;
-  max-width:850px;
-  border-radius: $borderRadius;
-  border: 1px solid transparent;
-  @include cellShadow;
-  h4{
-    color:$paymentTableHeaderTextColor;
-    font-size:$tubeInTitleFontSize;
-    font-family:$fontFamily;
-    font-weight:$fontNormal;
-    line-height:1;
-    margin-bottom:0;
-  }
-}
-.tube-card{
-  background:$personalCardBG;
-  border-radius:$borderRadius;
-  padding:$pad10;
-  @include cellShadow;
-  &.gap-bottom{
-    margin-bottom:10px;
-  }
-  .field-card:not(:last-child){
-    margin-bottom:20px;
-  }
-}
-
-.spin-counter{
-  button{
-    border-radius:$borderRadius;
-    padding: 7px 12px;
-    font-size: $touchSpinBtnFontSize;
-    cursor: pointer;
-    border:1px solid $inputBorderColor;
-    background:transparent;
-    line-height:$touchSpinBtnFontSize - 4;
-    color:$touchSpinBtnColor;
-    position: relative;
-    top: 1px;
-  }
-  .spin-down{
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right:0;
-  }
-  .input-box-wrapper{
-    border:1px solid $inputBorderColor;
-    height:35px;
-    border-radius:0;
-    width:135px;
-    padding:0 $pad10;
-    font-size:$tubeinInputFontSize;
-    color:$inputFieldColor;
-    &:focus{
-      color:$inputFocusTextColor;
-    }
-  }
-  .spin-up{
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left:0;
-  }
-}
 
 .resize-none{
   resize:none;
 }
 
-// Datepicker Style
-.react-calendar__tile--active{
-  background:$activeDateBG;
-}
-.react-date-picker{
-  width:100%;
-}
-.react-date-picker__button{
-  border: 1px solid $mytubeinDateInputBorderColor;
-  background: transparent;
-  color:$mytubeinDateInputTextColor;
-  font-size:$mytubeinDateInputFontSize;
-  transition: box-shadow .12s ease-in,border .12s ease-in;
-  line-height: 1.5;
-  padding:$pad5 - 2 $pad10;
-  width:100%;
-  border-radius:$borderRadius;
-  &:hover,&:focus{
-    border-color:$mytubeinDateInputFocusBorderColor;
-  }
-  .react-date-picker__button__icon svg{
-    padding: 2px 0 1px;
-  }
-  .react-date-picker__button__icon:enabled:hover svg g{
-      stroke:$khakiColor;
-  }
-}
 
 .border-input{
   height:35px;
   width:100%;
-  border:1px solid $inputBorderColor;
+  border-width:0 0 1px 0;
+  border-style:solid;
+  border-color:$inputBorderColor;
   font-size:$tubeinInputFontSize;
-  border-radius:$borderRadius;
+  border-radius:0;
   color:$inputFieldColor;
   padding:0 8px;
-  &:focus,&:hover{
+  &:focus{
     color:$inputFocusTextColor;
     border-color:$inputFocusBorderColor;
   }
+}
+.border-input ~ .focus-border{
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  z-index: 99;
+  
+  background-color: #3399FF;
+  transition: 0.4s;
+}
+.border-input:focus ~ .focus-border {
+  width: 100%;
+  transition: 0.4s;
+  left:0;
+}
+.form-group{
+  position: relative;
 }
 
 .form-control{
@@ -324,6 +244,24 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
     box-shadow:none!important;
   }
 }
+
+.page-heading{
+  color:#002e47;
+  font-size:24px;
+  font-family:$fontFamily;
+  font-weight:bold;
+  margin-bottom:60px;
+}
+.modal-link{
+  font-size:14px;
+  font-family:$fontFamily;
+  color: #002e47;
+  cursor: pointer;
+  font-weight:$fontMedium;
+
+}
+
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -395,16 +333,4 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
   	}
   }
 
-.page-heading{
-  color:#002e47;
-  font-size:24px;
-  font-family:$fontFamily;
-  font-weight:bold;
-  margin-bottom:60px;
-}
-.modal-link{
-  font-size:14px;
-  font-family:$fontFamily;
-  color: #1a88d4;
-  cursor: pointer;
-}
+
