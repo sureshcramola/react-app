@@ -19,12 +19,15 @@ class Header extends Component {
       isUserProfileCardOpen:false,
       loginModalVisibility:false,
       signupModalVisibility:false,
-      forgotModalVisibility:false
+      forgotModalVisibility:false,
+      isLoginPasswordVisible:false,
+      isSignupPasswordVisible:false
     }
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
     this.toggleSignupModal = this.toggleSignupModal.bind(this);
     this.toggleForgotModal = this.toggleForgotModal.bind(this);
     this.modalSwap = this.modalSwap.bind(this);
+    this.changePasswordVisibility = this.changePasswordVisibility.bind(this);
   }
 
   // Toggle Login Modal based on loginModalVisibility State
@@ -44,6 +47,10 @@ class Header extends Component {
     this.setState({
       forgotModalVisibility:!this.state.forgotModalVisibility
     })
+  }
+
+  changePasswordVisibility(){
+    var passRef= this.refs.loginPassword
   }
 
   modalSwap(modalName){
@@ -86,8 +93,8 @@ class Header extends Component {
         <Modal isOpen={this.state.forgotModalVisibility} className="modal-forget" centered="true">
           <ModalBody>
             <div className="text-center">
-              <span className="forgot-icon">
-
+              <span className="forgot-icon d-flex justify-content-center align-items-center">
+                <i class="fa fa-key" aria-hidden="true"></i>
               </span>
               <h4 className="forget-title">Forgot Your Password ?</h4>
               <p className="forget-subtitle">No worries ! Enter yout email and we will send you a reset link</p>
@@ -104,7 +111,7 @@ class Header extends Component {
             
           </ModalBody>
           <ModalFooter>
-            <input type="submit" value="Submit" color="primary" className="button-primary" />
+            <input type="submit" value="Submit" color="primary" className="button-primary  mr-2" />
             <button color="danger"  onClick={(e) => this.modalSwap('login')}  className="button-secondary">Cancel</button>
           </ModalFooter>
         </Modal>
@@ -131,8 +138,11 @@ class Header extends Component {
               <div className="col-md-12">
                 <div className="form-group">
                   <label>Password:</label>
-                  <input type="text" value={this.state.team} onChange={this.handleChangeTeam} className="border-input" />
+                  <input  type={this.state.isLoginPasswordVisible? 'text':'password'} value={this.state.team} onChange={this.handleChangeTeam} className="border-input" />
                   <span className="focus-border"></span>
+                  <div className="password-visibility"onClick={()=> this.setState({isLoginPasswordVisible:!this.state.isLoginPasswordVisible})}>
+                    <i className={this.state.isLoginPasswordVisible? 'fa fa-eye':'fa fa-eye-slash' } aria-hidden="true"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,7 +152,7 @@ class Header extends Component {
               <span className="modal-link" onClick={(e) => this.modalSwap('forgot')}>Forgot Password ?</span>
             </div>
             <div className="text-right">
-              <input type="submit" value="Submit" color="primary" className="button-primary mr-3" />
+              <input type="submit" value="Submit" color="primary" className="button-primary mr-2" />
               <button color="danger" onClick={this.toggleLoginModal}  className="button-secondary">Cancel</button>
             </div>
           </ModalFooter>
@@ -170,14 +180,17 @@ class Header extends Component {
               <div className="col-md-12">
                 <div className="form-group">
                   <label>Password:</label>
-                  <input type="text" value={this.state.team} onChange={this.handleChangeTeam} className="border-input" />
+                  <input type={this.state.isSignupPasswordVisible? 'text':'password' } value={this.state.team} onChange={this.handleChangeTeam} className="border-input" />
                   <span className="focus-border"></span>
+                  <div className="password-visibility"onClick={()=> this.setState({isSignupPasswordVisible:!this.state.isSignupPasswordVisible})}>
+                    <i className={this.state.isSignupPasswordVisible? 'fa fa-eye':'fa fa-eye-slash' } aria-hidden="true"></i>
+                  </div>
                 </div>
               </div>
             </div>
           </ModalBody>
           <ModalFooter>
-            <input type="submit" value="Submit" color="primary" className="button-primary" />
+            <input type="submit" value="Submit" color="primary" className="button-primary  mr-2" />
             <button color="danger" onClick={this.toggleSignupModal} className="button-secondary">Cancel</button>
           </ModalFooter>
         </Modal>

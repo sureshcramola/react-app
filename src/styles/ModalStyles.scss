@@ -28,8 +28,11 @@
     display: inline-block;
     width:70px;
     height:70px;
-    background:#ff8500;
+    background:$buttonBG;
     border-radius:50%;
+    color:$whiteColor;
+    font-size:30px;
+    margin:0 auto;
   }
   .forget-subtitle {
     color: #262626;
@@ -40,6 +43,4 @@
     margin-bottom:25px;
   }
 }
-.modal-dialog.modal-forget{
-  
-}
+

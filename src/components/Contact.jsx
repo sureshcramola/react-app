@@ -14,19 +14,23 @@ class Contact extends Component {
                             <div className="form-wrapper">
                                 <div className="form-group">
                                     <label className="w-100">Name</label>
-                                    <input type="text" name="name" />
+                                    <input type="text" className="border-input" name="name" />
+                                    <span className="focus-border"></span>
                                 </div>
                                 <div className="form-group">
                                     <label className="w-100">Email</label>
-                                    <input type="text" name="email" />
+                                    <input className="border-input" type="text" name="email" />
+                                    <span className="focus-border"></span>
                                 </div>
                                 <div className="form-group">
                                     <label className="w-100">Phone Number</label>
-                                    <input type="text" name="phone_number" />
+                                    <input className="border-input" type="text" name="phone_number" />
+                                    <span className="focus-border"></span>
                                 </div>
                                 <div className="form-group">
                                     <label className="w-100">Message</label>
-                                    <textarea rows="3"></textarea>
+                                    <textarea  className="border-input" rows="3"></textarea>
+                                    <span className="focus-border"></span>
                                 </div>
                             </div>
                         </div>

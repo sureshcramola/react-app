@@ -1,4 +1,4 @@
-@import 'commonStyle';
+@import '_commonStyle';
 $pad10:10px;
 $pad25:25px;
 footer{
@@ -14,5 +14,29 @@ footer{
     font-weight: $fontMedium;
     margin-bottom:0;
     text-align:left;
+  }
+  .social-icon{
+    display: inline-block;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    font-size:16px;
+    color:$whiteColor;
+    cursor: pointer;
+    text-align: center;
+    line-height:30px;
+    margin-right:10px;
+    &.fb-icon{
+      background:#2d609b;
+      border:1px solid #2d609b;
+    }
+    &.twt-icon{
+      background:#22bbf4;
+      border:1px solid #22bbf4;
+    }
+    &.insta-icon{
+      background:#d328a0;
+      border:1px solid #d328a0;
+    }
   }
 }

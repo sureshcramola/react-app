@@ -112,7 +112,7 @@ $pad5:5px;
   transform: translateY(-2px) !important;
   -webkit-transform: translateY(-2px) !important;
   -ms-transform: translateY(-2px) !important;
-  box-shadow: 0 8px 15px -8px $btnHoverShadowColor;
+  // box-shadow: 0 8px 15px -8px $btnHoverShadowColor;
 }
 .pad-0{
   padding:0!important;
@@ -214,7 +214,7 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
   padding:0 8px;
   &:focus{
     color:$inputFocusTextColor;
-    border-color:$inputFocusBorderColor;
+    // border-color:$inputFocusBorderColor;
   }
 }
 .border-input ~ .focus-border{
@@ -225,7 +225,7 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
   height: 2px;
   z-index: 99;
   
-  background-color: #3399FF;
+  background-color: $inputFocusBorderColor;
   transition: 0.4s;
 }
 .border-input:focus ~ .focus-border {
@@ -261,6 +261,13 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
 
 }
 
+.password-visibility{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  font-size:20px;
+}
 
 @-webkit-keyframes fadeIn {
   from {

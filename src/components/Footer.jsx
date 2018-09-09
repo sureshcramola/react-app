@@ -12,7 +12,9 @@ class Footer extends Component {
                     <div className="row">
                         <div className="col-xs-12 col-sm-12 col-md-3">
                             <div className="contact-details">
-                               &copy; Copyright 2018. All rights reserved.
+                               <span className="align-self-center social-icon fb-icon"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                               <span className="align-self-center social-icon twt-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                               <span className="align-self-center social-icon insta-icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
                             </div>
                         </div>
                         <div className="col-xs-12 col-sm-12 col-md-3">
@@ -20,9 +22,9 @@ class Footer extends Component {
                                 
                             </div>
                         </div>
-                        <div className="col-xs-12 col-sm-12 col-md-6">
-                            <div className="contact-details text-right">
-                                {/* EasyBite is a trademark of Think Elements LLC. All rights reserved. */}
+                        <div className="col-xs-12 col-sm-12 col-md-6  align-self-center">
+                            <div className="contact-details text-right ">
+                                &copy; Copyright 2018. All rights reserved.
                             </div>
                         </div>
                     </div>
