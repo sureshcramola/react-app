@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import logoImage from '../images/logoh.png'
 import '../styles/FooterStyles.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Footer extends Component {
     constructor(props) {
         super(props)
@@ -12,7 +13,10 @@ class Footer extends Component {
                     <div className="row">
                         <div className="col-xs-12 col-sm-12 col-md-3">
                             <div className="contact-details">
-                               <span className="align-self-center social-icon fb-icon"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                               <span className="align-self-center social-icon fb-icon">
+                                {/* <FontAwesomeIcon icon="facebook"></FontAwesomeIcon> */}
+                                <i className="fa fa-facebook" aria-hidden="true"></i>
+                                </span>
                                <span className="align-self-center social-icon twt-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
                                <span className="align-self-center social-icon insta-icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
                             </div>

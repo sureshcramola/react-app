@@ -187,7 +187,7 @@ input:-moz-placeholder, textarea::-moz-placeholder {
 .resize-none {
   resize: none; }
 
-.border-input {
+.border-input, .ant-input {
   height: 35px;
   width: 100%;
   border-width: 0 0 1px 0;
@@ -197,10 +197,10 @@ input:-moz-placeholder, textarea::-moz-placeholder {
   border-radius: 0;
   color: rgba(44, 50, 66, 0.35);
   padding: 0 8px; }
-  .border-input:focus {
+  .border-input:focus, .ant-input:focus {
     color: rgba(44, 50, 66, 0.75); }
 
-.border-input ~ .focus-border {
+.border-input ~ .focus-border, .ant-input ~ .focus-border {
   position: absolute;
   bottom: -1px;
   left: 50%;
@@ -210,7 +210,7 @@ input:-moz-placeholder, textarea::-moz-placeholder {
   background-color: #ff8500;
   transition: 0.4s; }
 
-.border-input:focus ~ .focus-border {
+.border-input:focus ~ .focus-border, .ant-input:focus ~ .focus-border {
   width: 100%;
   transition: 0.4s;
   left: 0; }
@@ -332,7 +332,7 @@ input:-moz-placeholder, textarea::-moz-placeholder {
     background: #ff8500;
     border-radius: 50%;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 24px;
     margin: 0 auto; }
   .modal-content .forget-subtitle {
     color: #262626;

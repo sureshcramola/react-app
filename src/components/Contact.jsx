@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
 import '../styles/ContactStyle.css'
 class Contact extends Component {
     constructor(props) {
         super(props)
     }
+    static defaultProps = {
+        center: {
+            lat: 30.0869,
+            lng: 78.2676
+        },
+        zoom: 11
+    };
     render() {
         return (
             <div className="contact-wrapper">
@@ -36,7 +44,19 @@ class Contact extends Component {
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-6">
                             <div className="map-wrapper">
-                                
+                            <GoogleMapReact
+                                bootstrapURLKeys={{ key: 
+                                    'AIzaSyC_yIwFMF1IzBYUkpm9Y9EkzxmsX70iBLg'
+                                     }}
+                                defaultCenter={this.props.center}
+                                defaultZoom={this.props.zoom}
+                                >
+                                <div
+                                    lat={30.0869}
+                                    lng={78.2676}
+                                    text={'Suresh Ramola'}
+                                ></div>
+                            </GoogleMapReact>
                             </div>
                         </div>
                     </div>

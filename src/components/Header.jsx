@@ -7,7 +7,7 @@ import logoImage from '../images/logoh.png'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { faKey,faEye } from '@fortawesome/free-solid-svg-icons';
 // https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc
 // import * as utility from "../utils/getURLs"
 // import {userSignOut} from '../actions'
@@ -94,7 +94,7 @@ class Header extends Component {
           <ModalBody>
             <div className="text-center">
               <span className="forgot-icon d-flex justify-content-center align-items-center">
-                <i class="fa fa-key" aria-hidden="true"></i>
+                <FontAwesomeIcon icon={faKey} />
               </span>
               <h4 className="forget-title">Forgot Your Password ?</h4>
               <p className="forget-subtitle">No worries ! Enter yout email and we will send you a reset link</p>
@@ -140,7 +140,8 @@ class Header extends Component {
                   <label>Password:</label>
                   <input  type={this.state.isLoginPasswordVisible? 'text':'password'} value={this.state.team} onChange={this.handleChangeTeam} className="border-input" />
                   <span className="focus-border"></span>
-                  <div className="password-visibility"onClick={()=> this.setState({isLoginPasswordVisible:!this.state.isLoginPasswordVisible})}>
+                  <div className="password-visibility"onClick={()=> this.setState({isLoginPasswordVisible:!this.state.isLoginPasswordVisible})}>  
+                    {/* <FontAwesomeIcon icon={this.state.isLoginPasswordVisible? faEye:'fa fa-eye-slash' } /> */}
                     <i className={this.state.isLoginPasswordVisible? 'fa fa-eye':'fa fa-eye-slash' } aria-hidden="true"></i>
                   </div>
                 </div>
@@ -170,7 +171,35 @@ class Header extends Component {
             <div className="row">
               <div className="col-md-12">
                 <div className="form-group">
-                  <label>Username/Email Id:</label>
+                  <label>First Name:</label>
+                  <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" />
+                  <span className="focus-border"></span>
+                </div>
+              </div>
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Last Name:</label>
+                  <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" />
+                  <span className="focus-border"></span>
+                </div>
+              </div>
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Gender:</label>
+                  <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" />
+                  <span className="focus-border"></span>
+                </div>
+              </div>
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>D.O.B:</label>
+                  <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" />
+                  <span className="focus-border"></span>
+                </div>
+              </div>
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Email Id:</label>
                   <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" />
                   <span className="focus-border"></span>
                 </div>
