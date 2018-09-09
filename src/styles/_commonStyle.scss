@@ -202,7 +202,7 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
 }
 
 
-.border-input,.ant-input{
+.border-input{
   height:35px;
   width:100%;
   border-width:0 0 1px 0;
@@ -217,9 +217,9 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
     // border-color:$inputFocusBorderColor;
   }
 }
-.border-input ~ .focus-border,.ant-input ~ .focus-border{
+.border-input ~ .focus-border{
   position: absolute;
-  bottom: -1px;
+  bottom: 0px;
   left: 50%;
   width: 0;
   height: 2px;
@@ -228,7 +228,10 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
   background-color: $inputFocusBorderColor;
   transition: 0.4s;
 }
-.border-input:focus ~ .focus-border,.ant-input:focus ~ .focus-border {
+// textarea.border-input ~ .focus-border{
+//   bottom:-2px;
+// }
+.border-input:focus ~ .focus-border {
   width: 100%;
   transition: 0.4s;
   left:0;

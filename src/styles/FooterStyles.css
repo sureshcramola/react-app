@@ -187,7 +187,7 @@ input:-moz-placeholder, textarea::-moz-placeholder {
 .resize-none {
   resize: none; }
 
-.border-input, .ant-input {
+.border-input {
   height: 35px;
   width: 100%;
   border-width: 0 0 1px 0;
@@ -197,12 +197,12 @@ input:-moz-placeholder, textarea::-moz-placeholder {
   border-radius: 0;
   color: rgba(44, 50, 66, 0.35);
   padding: 0 8px; }
-  .border-input:focus, .ant-input:focus {
+  .border-input:focus {
     color: rgba(44, 50, 66, 0.75); }
 
-.border-input ~ .focus-border, .ant-input ~ .focus-border {
+.border-input ~ .focus-border {
   position: absolute;
-  bottom: -1px;
+  bottom: 0px;
   left: 50%;
   width: 0;
   height: 2px;
@@ -210,7 +210,7 @@ input:-moz-placeholder, textarea::-moz-placeholder {
   background-color: #ff8500;
   transition: 0.4s; }
 
-.border-input:focus ~ .focus-border, .ant-input:focus ~ .focus-border {
+.border-input:focus ~ .focus-border {
   width: 100%;
   transition: 0.4s;
   left: 0; }
