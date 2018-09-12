@@ -11,16 +11,21 @@ import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
 library.add(faEnvelope, faKey);
 class App extends Component {
   render() {
+    // const { location } = this.props;
+  //   let fixedClass = null;
+  //   if(props.location.pathname == "/"){
+  //     fixedClass = 'fixed'
+  //  }
     return (
       <Router>
         <div className="App">
-          <Header/>
+            <Header/>
             <div className="main-content-wrapper">
               <Route exact path="/" component={Home} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/about" component={About} />
             </div>
-          <Footer/>
+            <Footer/>
         </div>
       </Router>
     );
