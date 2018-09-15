@@ -351,7 +351,6 @@ class Header extends Component {
               <Link className="nav-links underline-none" to="/blog">Blog</Link>
               {/* <Link className="nav-links underline-none" to="/account">Profile</Link> */}
               <Link className="nav-links underline-none" to="/contact">Contact Us</Link>
-              <a className="nav-links underline-none" href="http://www.mcaleicester.co.uk/if-the-lid-fits/tourer">Demo</a>
             </div>
           </div>
 
