@@ -7,6 +7,10 @@ footer{
   padding:10px 0;
   position:relative;
   font-family: $fontFamily;
+  &.fixed{
+    position: fixed;
+    bottom:0;
+  }
   .contact-details{
     font-family:inherit;
     color:$BGFooterTextColor;
