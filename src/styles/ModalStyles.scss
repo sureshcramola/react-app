@@ -1,46 +1,60 @@
 @import 'commonStyle';
-.modal-content{
-  border-radius:0 15px 0 15px!important;
-  border:0!important;
-  font-family:$fontFamily;
-  .modal-title{
-    text-transform:uppercase;
+.modal-content {
+    border-radius: 0 !important;
+    border: 0 !important;
+    font-family: $fontFamily;
+    cursor: pointer;
+    .modal-close {
+      position: absolute;
+      right: -40px;
+      width: 30px;
+      top: -3px;
+    }  
+
+
+
+.modal-title {
+    text-transform: uppercase;
     color: #002e47;
     font-family: $fontFamily;
     font-weight: 600;
     font-size: 18px;
-  }
-  .forget-title{
+}
+
+.forget-title {
     color: #002e47;
     font-family: $fontFamily;
     font-weight: 600;
     font-size: 18px;
     margin-top: 20px;
     margin-bottom: 15px;
-  }
-  label{
-    font-size:13px;
-    font-family:$fontFamily;
-    font-weight:$fontNormal;
-    color:$modalLabelColor;
-  }
-  .forgot-icon{
+}
+
+label {
+    font-size: 13px;
+    font-family: $fontFamily;
+    font-weight: $fontNormal;
+    color: $modalLabelColor;
+}
+
+.forgot-icon {
     display: inline-block;
-    width:70px;
-    height:70px;
-    background:$buttonBG;
-    border-radius:50%;
-    color:$whiteColor;
-    font-size:24px;
-    margin:0 auto;
-  }
-  .forget-subtitle {
+    width: 70px;
+    height: 70px;
+    background: $buttonBG;
+    border-radius: 50%;
+    color: $whiteColor;
+    font-size: 24px;
+    margin: 0 auto;
+}
+
+.forget-subtitle {
     color: #262626;
     font-family: $fontFamily;
     font-size: 14px;
     font-weight: 400;
     padding: 0 17%;
-    margin-bottom:25px;
-  }
+    margin-bottom: 25px;
 }
 
+}

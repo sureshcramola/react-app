@@ -4,11 +4,11 @@ import '../styles/HeaderStyles.css'
 import '../styles/ModalStyles.css'
 import '../styles/ContactStyle.css'
 import logoImage from '../images/logoh.png'
-import { location } from 'react-router'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import modalCloseImage from '../images/closeIconBlue.png'
+import { Link } from "react-router-dom";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faKey } from '@fortawesome/free-solid-svg-icons';
 // https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc
 // import * as utility from "../utils/getURLs"
 // import {userSignOut} from '../actions'
@@ -93,6 +93,9 @@ class Header extends Component {
       return (
         <Modal isOpen={this.state.forgotModalVisibility} className="modal-forget" centered="true">
           <ModalBody>
+            <div className="modal-close" onClick={(e) => this.modalSwap('login')}>
+              <img src={modalCloseImage} className="img-fluid"/>
+            </div>
             <div className="text-center">
               <span className="forgot-icon d-flex justify-content-center align-items-center">
                 <FontAwesomeIcon icon={faKey} />
@@ -124,6 +127,9 @@ class Header extends Component {
     if (this.state.loginModalVisibility) {
       return (
         <Modal isOpen={this.state.loginModalVisibility} className="" centered="true">
+          <div className="modal-close" onClick={(e) => this.modalSwap('forgot')}>
+            <img src={modalCloseImage} className="img-fluid"/>
+          </div>
           <ModalHeader>Login</ModalHeader>
           <ModalBody>
             <div className="row">
@@ -167,6 +173,9 @@ class Header extends Component {
     if (this.state.signupModalVisibility) {
       return (
         <Modal isOpen={this.state.signupModalVisibility} className="" centered="true" backdrop="false">
+          <div className="modal-close" onClick={this.toggleSignupModal}>
+            <img src={modalCloseImage} className="img-fluid"/>
+          </div>
           <ModalHeader>Signup</ModalHeader>
           <ModalBody>
             <form name="registration_form" id="registration_form">
@@ -338,9 +347,9 @@ class Header extends Component {
     // }
     return (
       <div className={`header-wrapper ${window.location.pathname == '/'?'fixed':''}`}>
-        <a href="#" className="logo-wrap">
+        <Link className="logo-wrap underline-none" to="/">
           <img className="width-100" src={logoImage} />
-        </a>
+        </Link>
 
         <div className="rightBar ml-auto d-flex flex-row justify-content-end">
           {/* <div className="search-input-wrap align-self-center">

@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Arimo:400,700");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+body {
+  font-family: "Montserrat", sans-serif; }
+
 .width-100 {
   max-width: 100%; }
 
@@ -195,10 +198,10 @@ input:-moz-placeholder, textarea::-moz-placeholder {
   border-color: #dad8de;
   font-size: 13px;
   border-radius: 0;
-  color: rgba(44, 50, 66, 0.35);
+  color: rgba(44, 50, 66, 0.8);
   padding: 0 8px; }
   .border-input:focus {
-    color: rgba(44, 50, 66, 0.75); }
+    color: #2c3242; }
 
 .border-input ~ .focus-border {
   position: absolute;
@@ -313,10 +316,14 @@ label {
   padding: 60px 0; }
 
 .about-content p {
-  margin-bottom: 35px; }
+  margin-bottom: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  line-height: 26px; }
 
 .about-content h4 {
   color: #ff8500;
-  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   font-size: 18px;
-  margin-bottom: 30px; }
+  margin-bottom: 20px; }

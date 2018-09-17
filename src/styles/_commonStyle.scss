@@ -3,6 +3,9 @@
 @import 'mixins';
 $pad20:20px;
 $pad40:40px;
+body{
+  font-family:$fontFamily;
+}
 .width-100{
   max-width:100%;
 }
