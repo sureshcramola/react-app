@@ -319,6 +319,9 @@ label {
   padding: 0 10px;
   position: relative;
   font-family: "Montserrat", sans-serif; }
+  .header-wrapper.fixed {
+    position: fixed;
+    top: 0px; }
   .header-wrapper .logo-wrap {
     max-width: 80px;
     display: inline-block; }

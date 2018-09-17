@@ -353,11 +353,3 @@ label {
 
 .homeWrap .full-page-controls button:disabled {
   background-color: #b9b9bb; }
-
-footer {
-  position: fixed;
-  bottom: 0px; }
-
-.header-wrapper {
-  position: fixed;
-  top: 0px; }

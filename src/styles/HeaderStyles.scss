@@ -11,6 +11,10 @@ $pad25:25px;
   padding:0 10px;
   position:relative;
   font-family: $fontFamily;
+  &.fixed{
+    position:fixed;
+	  top:0px;
+  }
   .logo-wrap{
     max-width: 80px;
     display: inline-block;

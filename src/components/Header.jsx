@@ -4,6 +4,7 @@ import '../styles/HeaderStyles.css'
 import '../styles/ModalStyles.css'
 import '../styles/ContactStyle.css'
 import logoImage from '../images/logoh.png'
+import { location } from 'react-router'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -331,9 +332,12 @@ class Header extends Component {
 
   render() {
     const isUserLoggedIn = false;
-
+    // let fixedClass = null;
+    // if(this.props.location.pathname == "/"){
+    //   fixedClass = 'fixed'
+    // }
     return (
-      <div className="header-wrapper">
+      <div className={`header-wrapper ${window.location.pathname == '/'?'fixed':''}`}>
         <a href="#" className="logo-wrap">
           <img className="width-100" src={logoImage} />
         </a>

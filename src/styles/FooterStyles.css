@@ -315,6 +315,9 @@ footer {
   padding: 10px 0;
   position: relative;
   font-family: "Montserrat", sans-serif; }
+  footer.fixed {
+    position: fixed;
+    bottom: 0; }
   footer .contact-details {
     font-family: inherit;
     color: #b3b3b3;

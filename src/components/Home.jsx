@@ -10,6 +10,7 @@ class Contact extends Component {
     render() {
         return (
             <div className="homeWrap">
+            ffsfds
                     <FullPage controls>
                         <Slide className="slide-1">
                          

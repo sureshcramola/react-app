@@ -8,7 +8,7 @@ class Footer extends Component {
     }
     render() {
         return(
-            <footer>
+            <footer className={`${window.location.pathname == '/'?'fixed':''}`}>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-xs-12 col-sm-12 col-md-3">
