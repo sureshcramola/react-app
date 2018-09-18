@@ -1,6 +1,7 @@
 @import 'commonStyle';
 $pad10:10px;
 $pad25:25px;
+.overflow-hidden{overflow-y:hidden;}
 .homeWrap{
 	.slide-1{
 		background:url('../images/slide1.jpg') no-repeat;
@@ -47,6 +48,7 @@ $pad25:25px;
 	.full-page-controls button:disabled{
 	    background-color: #b9b9bb;
 	}
+
 	
 }
 
