@@ -20,9 +20,15 @@ class Home extends Component {
     return (
       <div className="homeWrap">
         <FullPage controls>
-          <Slide className="slide-1" />
-          <Slide className="slide-2" />
-          <Slide className="slide-3" />
+          <Slide className="slide-1">
+            <h1>Slide 1</h1>
+          </Slide>
+          <Slide className="slide-2">
+            <h1>Slide 2</h1>
+          </Slide>
+          <Slide className="slide-3">
+            <h1>Slide 3</h1>
+          </Slide>
         </FullPage>
       </div>
     );
