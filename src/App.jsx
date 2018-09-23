@@ -6,9 +6,7 @@ import Contact from './components/Contact'
 import About from './components/About'
 import Home from './components/Home'
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
-library.add(faEnvelope, faKey);
+
 class App extends Component {
 
   render() {
