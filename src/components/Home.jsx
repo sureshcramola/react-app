@@ -7,6 +7,14 @@ class Home extends Component {
     constructor(props) {
         super(props)
     }
+    
+    componentDidMount(){
+        document.body.classList.add('modal-open');
+    }
+
+    componentWillUnmount(){
+        document.body.classList.remove('modal-open');
+    }
     render() {
         return (
             <div className="homeWrap">
