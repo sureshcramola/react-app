@@ -18,7 +18,7 @@ class Login extends Component {
       <div className="login-modal">
         <Modal isOpen={this.props.modalVisibility} className="" centered="true">
           <div className="modal-close" onClick={this.props.toggleModal}>
-            <img src={modalCloseImage} className="img-fluid" />
+            <img src={modalCloseImage} className="img-fluid"  alt="close-icon"/>
           </div>
           <ModalHeader>Login</ModalHeader>
           <ModalBody>
