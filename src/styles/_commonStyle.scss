@@ -22,7 +22,7 @@ button{
   text-decoration:none;
   outline:none;
 }
-button:hover,button:focus,input:hover,input:focus,video:hover,video:focus,textarea:hover,textarea:focus{
+button:hover,button:focus,input:hover,input:focus,video:hover,video:focus,textarea:hover,textarea:focus,.select-input:focus{
   outline:none;
 }
 video{
@@ -205,7 +205,7 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
 }
 
 
-.border-input{
+.border-input,.select-input{
   height:35px;
   width:100%;
   border-width:0 0 1px 0;
@@ -215,12 +215,35 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
   border-radius:0;
   color:$inputFieldColor;
   padding:0 8px;
+  font-weight:$fontMedium;
   &:focus{
     color:$inputFocusTextColor;
     // border-color:$inputFocusBorderColor;
   }
 }
-.border-input ~ .focus-border{
+.select-input{
+  -webkit-appearance:none;
+  appearance: none;
+  background:transparent;
+  outline:none;
+}
+.select-dropdown{
+  position: relative;
+}
+.select-dropdown:after{
+  content: '';
+  position: absolute;
+  right:3px;
+  top:17px;
+  border-top: 8px solid $buttonBG;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  display: inline-block;
+}
+textarea.border-input{
+  height:60px;
+}
+.border-input ~ .focus-border,.select-input ~ .focus-border{
   position: absolute;
   bottom: 0px;
   left: 50%;
@@ -231,6 +254,7 @@ input:-moz-placeholder,textarea::-moz-placeholder { /* Firefox 18- */
   background-color: $inputFocusBorderColor;
   transition: 0.4s;
 }
+
 // textarea.border-input ~ .focus-border{
 //   bottom:-2px;
 // }

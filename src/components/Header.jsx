@@ -117,7 +117,7 @@ class Header extends Component {
     return (
       <div className={`header-wrapper ${window.location.pathname == '/' ? 'fixed' : ''}`}>
         <Link className="logo-wrap underline-none" to="/">
-          <img className="width-100" src={logoImage} />
+          <img className="width-100" src={logoImage}  alt="logo"/>
         </Link>
 
         <div className="rightBar ml-auto d-flex flex-row justify-content-end">
@@ -137,7 +137,7 @@ class Header extends Component {
             </button>
             <button className="user-detail-wrapper d-flex flex-row align-items-center justify-content-between">
               <div className="user-profile-img">
-                <img src={logoImage} className="width-100" />
+                <img src={logoImage} className="width-100"  alt="logo"/>
                 <div className="user-status-indicator">
                 </div>
               </div>

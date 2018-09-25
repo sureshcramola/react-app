@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './App.scss';
+
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Contact from './components/Contact'
 import About from './components/About'
 import Home from './components/Home'
+// import SimpleBar from 'simplebar';
+// import 'simplebar/dist/simplebar.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {

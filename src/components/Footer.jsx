@@ -19,12 +19,12 @@ class Footer extends Component {
                                 <i className="fa fa-facebook" aria-hidden="true"></i>
                                 </span>
                                <span className="align-self-center social-icon twt-icon">
-                               <i class="fa fa-twitter" aria-hidden="true"></i>
+                               <i className="fa fa-twitter" aria-hidden="true"></i>
                                 {/* <FontAwesomeIcon  icon="fa fa-facebook"></FontAwesomeIcon> */}
                                </span>
                                
                                <span className="align-self-center social-icon insta-icon">
-                               <i class="fa fa-instagram" aria-hidden="true"></i>
+                               <i className="fa fa-instagram" aria-hidden="true"></i>
                                {/* <FontAwesomeIcon  icon="fa fa-facebook"></FontAwesomeIcon> */}
                                </span>
                             </div>
