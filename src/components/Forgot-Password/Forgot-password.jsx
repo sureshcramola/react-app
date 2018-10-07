@@ -17,7 +17,7 @@ class ForgotPassword extends Component {
       <Modal isOpen={this.props.modalVisibility} className="modal-forget" centered="true">
         <ModalBody>
           <div className="modal-close" onClick={this.props.toggleModal}>
-            <img src={modalCloseImage} className="img-fluid" />
+            <img src={modalCloseImage} className="img-fluid" alt="close-icon"/>
           </div>
           <div className="text-center">
             <span className="forgot-icon d-flex justify-content-center align-items-center">

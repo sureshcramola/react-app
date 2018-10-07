@@ -19,7 +19,7 @@ button {
   text-decoration: none;
   outline: none; }
 
-button:hover, button:focus, input:hover, input:focus, video:hover, video:focus, textarea:hover, textarea:focus {
+button:hover, button:focus, input:hover, input:focus, video:hover, video:focus, textarea:hover, textarea:focus, .select-input:focus {
   outline: none; }
 
 video {
@@ -190,7 +190,7 @@ input:-moz-placeholder, textarea::-moz-placeholder {
 .resize-none {
   resize: none; }
 
-.border-input {
+.border-input, .select-input {
   height: 35px;
   width: 100%;
   border-width: 0 0 1px 0;
@@ -199,11 +199,34 @@ input:-moz-placeholder, textarea::-moz-placeholder {
   font-size: 13px;
   border-radius: 0;
   color: rgba(44, 50, 66, 0.8);
-  padding: 0 8px; }
-  .border-input:focus {
+  padding: 0 8px;
+  font-weight: 500; }
+  .border-input:focus, .select-input:focus {
     color: #2c3242; }
 
-.border-input ~ .focus-border {
+.select-input {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  outline: none; }
+
+.select-dropdown {
+  position: relative; }
+
+.select-dropdown:after {
+  content: '';
+  position: absolute;
+  right: 3px;
+  top: 17px;
+  border-top: 8px solid #ff8500;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  display: inline-block; }
+
+textarea.border-input {
+  height: 60px; }
+
+.border-input ~ .focus-border, .select-input ~ .focus-border {
   position: absolute;
   bottom: 0px;
   left: 50%;
