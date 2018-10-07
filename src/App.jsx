@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+import { Provider,connect } from 'react-redux'
+import { store } from './store'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.scss';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Contact from './components/Contact'
 import About from './components/About'
 import Home from './components/Home'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+
 
 class App extends Component {
 
   render() {
     return (
+    <Provider store={store}>
       <Router>
         <div className="App">
             <Header/>
@@ -22,6 +26,7 @@ class App extends Component {
             <Footer/>
         </div>
       </Router>
+    </Provider>
     );
   }
 }

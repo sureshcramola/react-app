@@ -1,184 +1,151 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import '../../styles/ModalStyles.css'
 import modalCloseImage from '../../images/closeIconBlue.png'
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEyeSlash,faEye  } from '@fortawesome/fontawesome-free-solid'
+import { faEyeSlash, faEye } from '@fortawesome/fontawesome-free-solid'
+import { userRegistration } from '../../actions/UserActions'
 class Signup extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isSignupPasswordVisible: false
+      isSignupPasswordVisible: false,
+      user: {
+        firstName: '',
+        lastName: '',
+        gender: '',
+        emailId: '',
+        country: 'India',
+        city: 'Delhi',
+        dob: '1994/10/08',
+        password: ''
+      },
+      submitted: false
+    }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    const { name, value } = event.target;
+    const { user } = this.state;
+    this.setState({
+      user: {
+        ...user,
+        [name]: value
+      }
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    this.setState({ submitted: true });
+    const { user } = this.state;
+    console.log(user);
+    const { dispatch } = this.props;
+    if (user.firstName && user.lastName && user.gender && user.emailId && user.city && user.country && user.dob && user.password) {
+      dispatch(userRegistration(user));
     }
   }
 
   render() {
+    const { user, submitted } = this.state;
     return (
-      <Modal isOpen={this.props.modalVisibility} className="" centered="true" backdrop="false">
+      <form name="form" onSubmit={this.handleSubmit}>
+        <Modal isOpen={this.props.modalVisibility} className="" centered="true" backdrop="false">
           <div className="modal-close" onClick={this.props.toggleModal}>
             <img src={modalCloseImage} className="img-fluid" />
           </div>
           <ModalHeader>Signup</ModalHeader>
           <ModalBody>
-            <form name="registration_form" id="registration_form">
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="form-group">
-                    <label>First Name:</label>
-                    <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" name="firstname" />
-                    <span className="focus-border"></span>
-                  </div>
+
+            <div className="row">
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>First Name:</label>
+                  <input type="text" value={user.firstName} onChange={this.handleChange} className="border-input" name="firstName" />
+                  <span className="focus-border"></span>
                 </div>
-                <div className="col-md-12">
-                  <div className="form-group">
-                    <label>Last Name:</label>
-                    <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" name="lastname" />
-                    <span className="focus-border"></span>
-                  </div>
+              </div>
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Last Name:</label>
+                  <input type="text" value={user.lastName} onChange={this.handleChange} className="border-input" name="lastName" />
+                  <span className="focus-border"></span>
                 </div>
-                <div className="col-md-12">
-                  <div className="form-group">
-                    <label>Gender:</label>
-                    <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" />
-                    <span className="focus-border"></span>
-                  </div>
+              </div>
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Gender:</label>
+                  <input type="text" value={user.gender} onChange={this.handleChange} className="border-input" name="gender" />
+                  <span className="focus-border"></span>
                 </div>
-                <div className="col-md-12">
-                  <div className="form-group">
-                    <label>D.O.B:</label>
+              </div>
+              {/* <div className="col-md-12">
                     <div className="row">
-                      <div className="form-group col-sm-4 col-xs-6">
-                        <select className="form-control" id="birth_date" onChange={this.handleChange}>
-                          <option value="Day" disabled="" >Day</option>
-                          <option>01</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
-                          <option>11</option>
-                          <option>12</option>
-                          <option>13</option>
-                          <option>14</option>
-                          <option>15</option>
-                          <option>16</option>
-                          <option>17</option>
-                          <option>18</option>
-                          <option>19</option>
-                          <option>20</option>
-                          <option>21</option>
-                          <option>22</option>
-                          <option>23</option>
-                          <option>24</option>
-                          <option>25</option>
-                          <option>26</option>
-                          <option>27</option>
-                          <option>28</option>
-                          <option>29</option>
-                          <option>30</option>
-                          <option>31</option>
-                        </select>
+                      <div className="col-md-6">
+                        <label>Country</label>
+                        {this.getCountryDropdown()}
                       </div>
-                      <div className="form-group col-sm-4 col-xs-6">
-                        <label className="sr-only"></label>
-                        <select className="form-control" id="birth_month" onChange={this.handleChange}>
-                          <option value="month" disabled="" >Month</option>
-                          <option value="01">Jan</option>
-                          <option value="02">Feb</option>
-                          <option value="03">Mar</option>
-                          <option value="04">Apr</option>
-                          <option value="05">May</option>
-                          <option value="06">Jun</option>
-                          <option value="07">Jul</option>
-                          <option value="08">Aug</option>
-                          <option value="09">Sep</option>
-                          <option value="10">Oct</option>
-                          <option value="11">Nov</option>
-                          <option value="12"> Dec</option>
-                        </select>
-                      </div>
-                      <div className="form-group col-sm-4 col-xs-12">
-                        <label className="sr-only"></label>
-                        <select className="form-control" id="birth_year" onChange={this.handleChange}>
-                          <option value="year" disabled="" >Year</option>
-                          <option>1991</option>
-                          <option>1992</option>
-                          <option>1993</option>
-                          <option>1994</option>
-                          <option>1995</option>
-                          <option>1996</option>
-                          <option>1997</option>
-                          <option>1998</option>
-                          <option>1999</option>
-                          <option>2000</option>
-                          <option>2001</option>
-                          <option>2002</option>
-                          <option>2004</option>
-                          <option>2005</option>
-                          <option>2006</option>
-                          <option>2007</option>
-                          <option>2008</option>
-                          <option>2009</option>
-                          <option>2010</option>
-                          <option>2011</option>
-                          <option>2012</option>
-                        </select>
+                      <div className="col-md-6">
+                        <label>City</label>
+                        {this.state.cityDropdown}
                       </div>
                     </div>
-                    {/* <input type="text" value={this.state.name} onChange={this.handleChangeName} className="border-input" />
-                    <span className="focus-border"></span> */}
-                  </div>
+                    <div className="form-group">
+                      <label>Country:</label>
+                      <input type="text" value={this.state.name} name="Email" onChange={this.handleChange} className="border-input" />
+                      <span className="focus-border"></span>
+                    </div>
+                  </div> */}
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Email Id:</label>
+                  <input type="text" value={user.emailId} name="emailId" onChange={this.handleChange} className="border-input" />
+                  <span className="focus-border"></span>
                 </div>
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Country</label>
-                      {/* {this.getCountryDropdown()} */}
-                    </div>
-                    <div className="col-md-6">
-                      <label>City</label>
-                      {/* {this.state.cityDropdown} */}
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label>Country:</label>
-                    <input type="text" value={this.state.name} name="Email" onChange={this.handleChangeName} className="border-input" />
-                    <span className="focus-border"></span>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="form-group">
-                    <label>Email Id:</label>
-                    <input type="text" value={this.state.name} name="Email" onChange={this.handleChangeName} className="border-input" />
-                    <span className="focus-border"></span>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-12">
+                <div className="form-group">
+                  <label>Password:</label>
+                  <input type={this.state.isSignupPasswordVisible ? 'text' : 'password'} value={user.password} onChange={this.handleChange} className="border-input" name="password" />
+                  <span className="focus-border"></span>
+                  <div className="password-visibility" onClick={() => this.setState({ isSignupPasswordVisible: !this.state.isSignupPasswordVisible })}>
+                    <FontAwesomeIcon icon={this.state.isSignupPasswordVisible ? faEye : faEyeSlash} />
                   </div>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="form-group">
-                    <label>Password:</label>
-                    <input type={this.state.isSignupPasswordVisible ? 'text' : 'password'} value={this.state.team} onChange={this.handleChangeTeam} className="border-input" name="password" />
-                    <span className="focus-border"></span>
-                    <div className="password-visibility" onClick={() => this.setState({ isSignupPasswordVisible: !this.state.isSignupPasswordVisible })}>
-                      <FontAwesomeIcon icon={this.state.isSignupPasswordVisible? faEye : faEyeSlash  } /> 
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
+            </div>
+
+
           </ModalBody>
           <ModalFooter>
-            <input type="submit" value="Submit" color="primary" className="button-primary  mr-2" />
+            <button className="button-primary  mr-2" onClick={this.handleSubmit}>Submit</button>
+            {/* <input type="submit" value="Submit" color="primary" className="button-primary  mr-2" /> */}
             <button color="danger" onClick={this.props.toggleModal} className="button-secondary">Cancel</button>
           </ModalFooter>
         </Modal>
+      </form >
     )
   }
 }
 
-export default Signup
+const mapStateToProps = (state, props) => ({
+  user: state.user.user,
+})
+
+function mapDispatchToProps(dispatch) {
+  return {
+    signup: (...args) => dispatch(userRegistration(...args))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Signup)

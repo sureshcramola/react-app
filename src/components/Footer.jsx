@@ -15,7 +15,7 @@ class Footer extends Component {
                         <div className="col-xs-12 col-sm-12 col-md-3">
                             <div className="contact-details">
                                <span className="align-self-center social-icon fb-icon">
-                                {/* <FontAwesomeIcon  icon="fa fa-facebook"></FontAwesomeIcon> */}
+                                {/* <FontAwesomeIcon  icon="fa fa-facebook"></FontAwesomeIcon>94729472839393 */}
                                 <i className="fa fa-facebook" aria-hidden="true"></i>
                                 </span>
                                <span className="align-self-center social-icon twt-icon">
