@@ -1,0 +1,10 @@
+@import '_commonStyle';
+@import '_colors';
+$pad10:10px;
+$pad25:25px;
+.blog-wrapper {
+    padding: 20px;
+    .video-div {
+        background: $blogBG;
+    }
+}

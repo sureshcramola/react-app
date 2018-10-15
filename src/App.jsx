@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 import Contact from './components/Contact'
 import About from './components/About'
 import Home from './components/Home'
-
+import Blog from './components/Blog'
 class App extends Component {
 
   render() {
@@ -22,6 +22,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/about" component={About} />
+              <Route exact path="/blog" component={Blog} />
             </div>
             <Footer />
           </div>
