@@ -124,7 +124,7 @@ class Header extends Component {
           <div className="left-links">
             <div>
               <Link className="nav-links underline-none" to="/about">About Us</Link>
-              <Link className="nav-links underline-none" to="/blog">Blog</Link>
+              <Link className="nav-links underline-none" to="/my-videos">My Videos</Link>
               {/* <Link className="nav-links underline-none" to="/account">Profile</Link> */}
               <Link className="nav-links underline-none" to="/contact">Contact Us</Link>
             </div>
