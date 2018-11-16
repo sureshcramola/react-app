@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeUIVisibility, changeUIMode } from '../actions/VideoActions'
 import '../styles/BlogStyle.css'
+import blogImage from '../images/view-1.jpg';
+import VideoFile from '../videos/bunny.mp4';
 
 class Blog extends Component {
     constructor(props) {
@@ -15,6 +17,7 @@ class Blog extends Component {
 
     changeMode() {
         this.props.setMode({ mode: 'fullscreen' })
+        // this.props.setVisibility({ footer: !this.props.visibilities.footer, header: !this.props.visibilities.header  })
     }
 
     render() {
@@ -22,11 +25,29 @@ class Blog extends Component {
         return (
             <div className="blog-wrapper">
                 <div className="row">
-                    <div className="col-xs-12 col-sm-8 col-md-8">
-                        <video className="video-div"></video>
+                    <div className="col-xs-12 col-sm-6 col-md-3">
+                        <div className="video-wrapper">
+                            <video className="video-div" src={VideoFile}></video>
+                            <div className="video-overlay"></div>
+                        </div>
                     </div>
-                    <div className="col-xs-4 col-sm-4 col-md-4">
-                        <video className="video-div"></video>
+                    <div className="col-xs-12 col-sm-6 col-md-3">
+                        <div className="video-wrapper">
+                            <video className="video-div" src={VideoFile}></video>
+                            <div className="video-overlay"></div>
+                        </div>
+                    </div>
+                    <div className="col-xs-12 col-sm-6 col-md-3">
+                        <div className="video-wrapper">
+                            <video className="video-div" src={VideoFile}></video>
+                            <div className="video-overlay"></div>
+                        </div>
+                    </div>
+                    <div className="col-xs-12 col-sm-6 col-md-3">
+                        <div className="video-wrapper">
+                            <video className="video-div" src={VideoFile}></video>
+                            <div className="video-overlay"></div>
+                        </div>
                     </div>
                 </div>
                 <div className="mt-3">
@@ -45,7 +66,8 @@ const mapStateToProps = (state, props) => ({
 
 function mapDispatchToProps(dispatch) {
     return {
-        setMode: (...args) => dispatch(changeUIMode(...args))
+        setMode: (...args) => dispatch(changeUIMode(...args)),
+        setVisibility: (...args) => dispatch(changeUIVisibility(...args))
     }
 }
 
