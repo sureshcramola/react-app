@@ -25,12 +25,14 @@ $pad25:25px;
         }
         .video-play-icon {
             color: $whiteColor;
-            font-size: 30px;
-            padding: 3px 14px 0;
+            font-size: 25px;
+            padding-left: 1px;
             border: 3px solid #fff;
             width: 55px;
             height: 55px;
+            line-height:55px;
             border-radius:50%;
+            text-align: center;
             cursor: pointer;
             &:hover{
                 border-color:$secondaryColor;
@@ -71,5 +73,14 @@ $pad25:25px;
         height:40px;
         background:$primaryColor;
         padding:5px 10px;
+        .left-controls{
+            flex:0 0 65px;
+        }
+        .slider-controls{
+            flex:0 0 130px;
+        }
+        .right-controls{
+            flex:1;
+        }
     }
 }

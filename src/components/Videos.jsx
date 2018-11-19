@@ -12,34 +12,34 @@ class Videos extends Component {
         return (
             <div className="blog-wrapper">
                 <div className="row">
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <Video />
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <Video />
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <Video />
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <Video />
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <Video />
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <Video />
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <Video />
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <Video />
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <Video />
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <Video />
                     </div>
                 </div>
