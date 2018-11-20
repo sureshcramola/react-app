@@ -1,5 +1,5 @@
 import initialState from '../states/clientUI'
-import { VISIBILITY_CHANGE, MODE_CHANGE } from '../actions/types'
+import { VISIBILITY_CHANGE, MODE_CHANGE,VIDEO_CHANGE } from '../actions/types'
 
 export default function clientUIReducer(state = initialState, action) {
   switch (action.type) {
@@ -13,6 +13,10 @@ export default function clientUIReducer(state = initialState, action) {
       }
     }
     case MODE_CHANGE: {
+      return { ...state, mode: action.payload }
+    }
+
+    case VIDEO_CHANGE:{
       return { ...state, mode: action.payload }
     }
 

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import aboutImage from '../images/view-2.jpg'
-import userImage from '../images/user-image.jpg'
 import '../styles/homeStyle.css'
 import { FullPage, Slide } from 'react-full-page';
 class Home extends Component {

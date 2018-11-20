@@ -1,5 +1,6 @@
 export const USER_CHANGE = 'user/data_change'
 export const VISIBILITY_CHANGE = 'visibility_change'
+export const VIDEO_CHANGE = 'visibility_change'
 export const MODE_CHANGE = 'mode_change'
 export const ERROR_AUTHORIZATION_CHANGE = 'errors/authorization_change'
 export const ERROR_ALERT_CHANGE = 'errors/alert_change'

@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { changeUIVisibility, changeUIMode } from '../actions/VideoActions'
-import '../styles/BlogStyle.css'
+import { changeVideo } from '../actions/VideoActions'
 import videoRef from '../videos/bunny.mp4';
 import videoRefOGV from '../videos/bunny.ogg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import { faPlay, faPause, faArrowsAlt, faVolumeUp, faVolumeDown } from '@fortawesome/fontawesome-free-solid'
-
+import VideoModal from './Video-Modal/VideoModal';
 class Video extends Component {
     constructor(props) {
         super(props)
@@ -17,18 +15,27 @@ class Video extends Component {
             videoPlaying: false,
             isMuted: false,
             maxTime:0,
-            slideValue:0
+            slideValue:0,
+            videoModalVisibility:false,
+            modalVideoSource:'',
+            modalVideoThumb:''
         }
         this.videoPlay = this.videoPlay.bind(this);
         this.muteVideo = this.muteVideo.bind(this);
         this.onVideoProgressChange = this.onVideoProgressChange.bind(this);
         this.getVideoLength = this.getVideoLength.bind(this);
         this.updateSliderTime = this.updateSliderTime.bind(this);
+        this.videoAspectRatio = this.videoAspectRatio.bind(this);
+        this.toggleVideoModal = this.toggleVideoModal.bind(this);
     }
 
     componentDidMount() {
         this.videoAspectRatio();
-        
+        window.addEventListener("resize", this.videoAspectRatio);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.videoAspectRatio);
     }
 
     getVideoLength(){
@@ -44,11 +51,10 @@ class Video extends Component {
     }
 
     onVideoProgressChange(event){
-        // if(this.state.videoPlaying){
-        //     this.refs.videoRef.play();
-        // }
+        if(this.state.videoPlaying){
+            this.refs.videoRef.play();
+        }
         
-        console.log(event)
         if(event>=this.state.maxTime){
             this.setState({
                 videoPlaying: false,
@@ -60,12 +66,13 @@ class Video extends Component {
                 slideValue: event
             })
         }
+
         this.refs.videoRef.currentTime = event;
         
     }
 
-    videoPlay() {
-        console.log(this.state.maxTime)
+    videoPlay(videoID) {
+        console.log(videoID)
 
         if (this.state.videoPlaying) {
             this.refs.videoRef.pause();
@@ -108,6 +115,27 @@ class Video extends Component {
         });
     }
 
+    toggleVideoModal(){
+        
+        this.setState({
+            videoModalVisibility: !this.state.videoModalVisibility,
+            modalVideoSource:this.props.videoSrc,
+            modalVideoThumb:this.props.thumb
+        })
+    }
+
+    enlargeVideo() {
+        console.log(this.props.videoSrc)
+        if(this.state.videoPlaying){
+            this.refs.videoRef.pause();
+        }
+        if (this.state.videoModalVisibility) {
+          return (
+            <VideoModal modalVisibility={this.state.videoModalVisibility} videoSrc={this.state.modalVideoSource} toggleModal={this.toggleVideoModal} videoThumb={this.state.modalVideoThumb}></VideoModal>
+          );
+        }
+      }
+
     render() {
         const styles = {
             videoBoxStyle: {
@@ -115,17 +143,17 @@ class Video extends Component {
             }
         };
         const { videoBoxStyle } = styles;
-        console.log(this.props.mode);
+        console.log(this.props.videoSrc);
         return (
             <div className="video-block">
                 <div className="video-wrapper" ref="videoBox" style={videoBoxStyle}>
                     <video className="video-div" ref="videoRef" onLoadedMetadata={this.getVideoLength} 
-                    onTimeUpdate={this.updateSliderTime}>
-                        <source src={videoRef} type="video/mp4" />
-                        <source src={videoRefOGV} type="video/ogg" />
+                    onTimeUpdate={this.updateSliderTime} poster={this.props.thumb} videoID={this.props.videoID}>
+                        <source src={this.props.videoSrc} type="video/mp4" />
+                        <source src={this.props.videoSrc} type="video/ogg" />
                     </video>
                     <div className="video-overlay d-flex align-items-center justify-content-center">
-                        <span className="video-play-icon" onClick={this.videoPlay}>
+                        <span className="video-play-icon" onClick={() => this.videoPlay(this.props.videoID)}>
                             <FontAwesomeIcon icon={`${this.state.videoPlaying ? 'pause' : 'play'}`} />
                         </span>
                     </div>
@@ -143,30 +171,23 @@ class Video extends Component {
                         <Slider onChange={this.onVideoProgressChange} min={0} max={this.state.maxTime} value={this.state.slideValue}/>
                     </div>
                     <div className="right-controls text-right">
-                        <button className="full-screen-btn">
+                        <button className="full-screen-btn"  onClick={() => this.toggleVideoModal()}>
                             <FontAwesomeIcon icon={'expand'} />
                         </button>
                     </div>
 
                 </div>
+                {this.state.videoModalVisibility ? this.enlargeVideo() : ''}
             </div>
         );
     }
 }
 
 const mapStateToProps = (state, props) => ({
-    visibilities: state.clientUI.visible,
-    mode: state.clientUI.mode,
+    videos: state.clientUI.videos
 })
-
-function mapDispatchToProps(dispatch) {
-    return {
-        setMode: (...args) => dispatch(changeUIMode(...args)),
-        setVisibility: (...args) => dispatch(changeUIVisibility(...args))
-    }
-}
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    null
 )(Video)

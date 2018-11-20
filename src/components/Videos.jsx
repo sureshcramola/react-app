@@ -1,66 +1,43 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { changeUIVisibility, changeUIMode } from '../actions/VideoActions'
-import '../styles/BlogStyle.css'
+import { changeVideo } from '../actions/VideoActions'
+import '../styles/VideosStyle.css'
 import Video from './Video';
 class Videos extends Component {
     constructor(props) {
         super(props)
+    }
+    
+    
+    renderVideoList(){
+        const { videos } = this.props
+        return videos.map((video,index) => {
+            console.log(video);
+            return (
+              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <Video videoID={`appVideo${index}`} videoSrc={video.videoSrc} thumb={video.thumb}/>
+              </div>)
+          });
     }
 
     render() {
         return (
             <div className="blog-wrapper">
                 <div className="row">
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <Video />
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <Video />
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <Video />
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <Video />
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <Video />
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <Video />
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <Video />
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <Video />
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <Video />
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <Video />
-                    </div>
+                    {this.renderVideoList()}
                 </div>
-                {/* <div className="mt-3 mb-3">
-                    <button onClick={this.changeMode} className="button-primary mr-2">Theatre Mode</button>
-                    <button onClick={this.props.toggleModal} className="button-secondary">Normal Mode</button>
-                </div> */}
             </div>
         );
     }
 }
 
 const mapStateToProps = (state, props) => ({
-    visibilities: state.clientUI.visible,
-    mode: state.clientUI.mode,
+    videos: state.clientUI.videos
 })
 
 function mapDispatchToProps(dispatch) {
     return {
-        setMode: (...args) => dispatch(changeUIMode(...args)),
-        setVisibility: (...args) => dispatch(changeUIVisibility(...args))
+        setVideo: (...args) => dispatch(changeVideo(...args))
     }
 }
 

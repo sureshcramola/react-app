@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import logoImage from '../images/logoh.png'
 import '../styles/FooterStyles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Brands from '@fortawesome/free-brands-svg-icons';
@@ -9,7 +8,7 @@ class Footer extends Component {
     }
     render() {
         return (
-            <footer className={`${window.location.pathname == '/' ? 'fixed' : ''}`}>
+            <footer className={`${window.location.pathname === '/' ? 'fixed' : ''}`}>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-xs-12 col-sm-12 col-md-3">
