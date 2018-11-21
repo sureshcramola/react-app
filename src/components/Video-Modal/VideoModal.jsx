@@ -23,7 +23,7 @@ class VideoModal extends Component {
                         <img src={modalCloseImage} className="img-fluid" alt="close-icon" />
                     </div>
                     <ModalBody>
-                        <Video videoSrc={this.props.videoSrc} thumb={this.props.videoThumb} />
+                        <Video videoSrc={this.props.videoSrc} thumb={this.props.videoThumb} navControls={true} videoID={this.props.videoID} videoEnlarged={false}/>
                     </ModalBody>
                 </Modal>
             </div>
