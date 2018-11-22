@@ -15,7 +15,7 @@ class Videos extends Component {
             console.log(video);
             return (
               <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <Video key={`appVideo${index}`} videoRef={`appVideo${index}`} videoSrc={video.videoSrc} thumb={video.thumb} navControls={false} videoEnlarged={true}/>
+                <Video key={`${index}`} videoRef={`video${index}`} videoSrc={video.videoSrc} thumb={video.thumb} navControls={false} videoEnlarged={true}/>
               </div>)
           });
     }

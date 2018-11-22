@@ -7,6 +7,9 @@ $pad25:25px;
 .contact-row{
     .form-wrapper{
         padding-right:80px;
+        @media only screen and (max-width: 767px) {
+            padding-right:0;
+        }
     }
     .form-group{
         margin-bottom:35px;
@@ -14,6 +17,10 @@ $pad25:25px;
     .map-wrapper{
         width:100%;
         height:100%;
+        @media only screen and (max-width: 767px) {
+            height:220px;
+            margin-bottom:20px;
+        }
     }
     // input,textarea{
     //     width:100%;
@@ -21,6 +28,7 @@ $pad25:25px;
     //     border-color:#c3c3c3;
     //     border-style:solid;
     // }
+    .contact-row .map-wrapper
     textarea{
         resize:vertical;
     }

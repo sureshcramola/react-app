@@ -1,4 +1,4 @@
-import initialState from '../states/clientUI'
+import initialState from '../states/videoList'
 import { VISIBILITY_CHANGE, MODE_CHANGE,VIDEO_CHANGE } from '../actions/types'
 
 export default function clientUIReducer(state = initialState, action) {

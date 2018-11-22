@@ -37,10 +37,11 @@ class Video extends Component {
         window.removeEventListener("resize", this.videoAspectRatio);
     }
 
-    getVideoLength() {
-        this.setState({
-            maxTime: this.refs.videoRef.duration
-        })
+    getVideoLength(videoID) {
+        alert(videoID)
+        // this.setState({
+        //     maxTime: this[`video${videoID}`].duration
+        // })
     }
 
     updateSliderTime() {
@@ -72,23 +73,23 @@ class Video extends Component {
 
     videoPlay(videoID) {
         console.log(videoID)
+        // let videoRef1 = 'video'+videoID
+        // if (this.state.videoPlaying) {
+        //     this.refs.videoRef1.pause();
+        // } else {
+        //     this.refs.videoRef1.play();
+        // }
 
-        if (this.state.videoPlaying) {
-            this.refs.videoRef.pause();
-        } else {
-            this.refs.videoRef.play();
-        }
-
-        if (this.state.slideValue >= this.state.maxTime) {
-            this.setState({
-                slideValue: 0,
-                videoPlaying: !this.state.videoPlaying
-            })
-        } else {
-            this.setState({
-                videoPlaying: !this.state.videoPlaying
-            })
-        }
+        // if (this.state.slideValue >= this.state.maxTime) {
+        //     this.setState({
+        //         slideValue: 0,
+        //         videoPlaying: !this.state.videoPlaying
+        //     })
+        // } else {
+        //     this.setState({
+        //         videoPlaying: !this.state.videoPlaying
+        //     })
+        // }
 
 
     }
@@ -129,7 +130,7 @@ class Video extends Component {
         }
         if (this.state.videoModalVisibility) {
             return (
-                <VideoModal modalVisibility={this.state.videoModalVisibility} videoSrc={this.state.modalVideoSource}toggleModal={this.toggleVideoModal} videoThumb={this.state.modalVideoThumb} videoID={this.props.videoID}></VideoModal>
+                <VideoModal modalVisibility={this.state.videoModalVisibility} videoSrc={this.state.modalVideoSource}toggleModal={this.toggleVideoModal} videoThumb={this.state.modalVideoThumb} videoID={this.props.videoID}videoProgress={this.state.slideValue}></VideoModal>
             );
         }
     }
@@ -156,13 +157,13 @@ class Video extends Component {
         return (
             <div className="video-block">
                 <div className="video-wrapper" ref="videoBox" style={videoBoxStyle}>
-                    <video className="video-div" ref="videoRef" onLoadedMetadata={this.getVideoLength}
+                    <video className="video-div" ref={this.props.videoRef} onLoadedMetadata={()=>this.getVideoLength(this.props.key)}
                         onTimeUpdate={this.updateSliderTime} poster={this.props.thumb} videoID={this.props.key}>
                         <source src={this.props.videoSrc} type="video/mp4" />
                         <source src={this.props.videoSrc} type="video/ogg" />
                     </video>
                     <div className="video-overlay d-flex align-items-center justify-content-center">
-                        <span className="video-play-icon" onClick={() => this.videoPlay(this.props.videoID)}>
+                        <span className="video-play-icon" onClick={() => this.videoPlay(this.props.key)}>
                             <FontAwesomeIcon icon={`${this.state.videoPlaying ? 'pause' : 'play'}`} />
                         </span>
                     </div>
@@ -194,11 +195,10 @@ class Video extends Component {
                         <button className={`full-screen-btn ${this.props.videoEnlarged ? '':'hide'}`} onClick={() => this.toggleVideoModal()}>
                             <FontAwesomeIcon icon={'expand'} />
                         </button>
-                        <button className={`full-screen-btn ${this.props.videoEnlarged ? 'hide':''}`}  onClick={() => this.toggleVideoModal()}>
+                        <button className={`full-screen-btn ${this.props.videoEnlarged ? 'hide':''}`}  onClick={() => this.setState({videoModalVisibility:false})}>
                             <FontAwesomeIcon icon={'compress'} />
                         </button>
                     </div>
-
                 </div>
                 {this.state.videoModalVisibility ? this.enlargeVideo() : ''}
             </div>

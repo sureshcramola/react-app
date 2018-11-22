@@ -360,6 +360,9 @@ label {
 
 .contact-row .form-wrapper {
   padding-right: 80px; }
+  @media only screen and (max-width: 767px) {
+    .contact-row .form-wrapper {
+      padding-right: 0; } }
 
 .contact-row .form-group {
   margin-bottom: 35px; }
@@ -367,6 +370,10 @@ label {
 .contact-row .map-wrapper {
   width: 100%;
   height: 100%; }
+  @media only screen and (max-width: 767px) {
+    .contact-row .map-wrapper {
+      height: 220px;
+      margin-bottom: 20px; } }
 
-.contact-row textarea {
+.contact-row .contact-row .map-wrapper textarea {
   resize: vertical; }

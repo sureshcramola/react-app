@@ -18,6 +18,12 @@ footer{
     font-weight: $fontMedium;
     margin-bottom:0;
     text-align:left;
+    @media only screen and (max-width: 767px) {
+      text-align:center!important;
+      &.text-right{
+        margin-top:5px;
+      }
+    }
   }
   .social-icon{
     display: inline-block;
