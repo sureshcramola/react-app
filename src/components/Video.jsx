@@ -38,21 +38,24 @@ class Video extends Component {
     }
 
     getVideoLength(videoID) {
-        alert(videoID)
-        // this.setState({
-        //     maxTime: this[`video${videoID}`].duration
-        // })
-    }
-
-    updateSliderTime() {
+        // alert(videoID)
+        let ref = 'video'+videoID;
         this.setState({
-            slideValue: this.refs.videoRef.currentTime
+            maxTime: this.refs[ref].duration
         })
     }
 
-    onVideoProgressChange(event) {
+    updateSliderTime(videoID) {
+        let ref = 'video'+videoID;
+        this.setState({
+            slideValue: this.refs[ref].currentTime
+        })
+    }
+
+    onVideoProgressChange(event,videoID) {
+        let ref = 'video'+videoID;
         if (this.state.videoPlaying) {
-            this.refs.videoRef.play();
+            this.refs[ref].play();
         }
 
         if (event >= this.state.maxTime) {
@@ -67,38 +70,39 @@ class Video extends Component {
             })
         }
 
-        this.refs.videoRef.currentTime = event;
+        this.refs[ref].currentTime = event;
 
     }
 
     videoPlay(videoID) {
         console.log(videoID)
-        // let videoRef1 = 'video'+videoID
-        // if (this.state.videoPlaying) {
-        //     this.refs.videoRef1.pause();
-        // } else {
-        //     this.refs.videoRef1.play();
-        // }
+        let ref = 'video'+videoID;
+        if (this.state.videoPlaying) {
+            this.refs[ref].pause();
+        } else {
+            this.refs[ref].play();
+        }
 
-        // if (this.state.slideValue >= this.state.maxTime) {
-        //     this.setState({
-        //         slideValue: 0,
-        //         videoPlaying: !this.state.videoPlaying
-        //     })
-        // } else {
-        //     this.setState({
-        //         videoPlaying: !this.state.videoPlaying
-        //     })
-        // }
+        if (this.state.slideValue >= this.state.maxTime) {
+            this.setState({
+                slideValue: 0,
+                videoPlaying: !this.state.videoPlaying
+            })
+        } else {
+            this.setState({
+                videoPlaying: !this.state.videoPlaying
+            })
+        }
 
 
     }
 
-    muteVideo() {
+    muteVideo(videoID) {
+        let ref = 'video'+videoID;
         if (this.state.isMuted) {
-            this.refs.videoRef.muted = false;
+            this.refs[ref].muted = false;
         } else {
-            this.refs.videoRef.muted = true;
+            this.refs[ref].muted = true;
         }
 
         this.setState({
@@ -152,18 +156,20 @@ class Video extends Component {
             }
         };
         const { videoBoxStyle } = styles;
-        console.log(this.props.videoSrc);
-        
+        let videoRef = this.props.videoRef;
+        console.log(this.props.videoRef);
+        console.log(this.props.videoID)
         return (
             <div className="video-block">
                 <div className="video-wrapper" ref="videoBox" style={videoBoxStyle}>
-                    <video className="video-div" ref={this.props.videoRef} onLoadedMetadata={()=>this.getVideoLength(this.props.key)}
-                        onTimeUpdate={this.updateSliderTime} poster={this.props.thumb} videoID={this.props.key}>
+                    <video className="video-div" ref={videoRef} 
+                    onLoadedMetadata={(e)=>this.getVideoLength(this.props.videoID)}
+                        onTimeUpdate={()=>this.updateSliderTime(this.props.videoID)} poster={this.props.thumb} videoID={this.props.videoID}>
                         <source src={this.props.videoSrc} type="video/mp4" />
                         <source src={this.props.videoSrc} type="video/ogg" />
                     </video>
                     <div className="video-overlay d-flex align-items-center justify-content-center">
-                        <span className="video-play-icon" onClick={() => this.videoPlay(this.props.key)}>
+                        <span className="video-play-icon" onClick={() => this.videoPlay(this.props.videoID)}>
                             <FontAwesomeIcon icon={`${this.state.videoPlaying ? 'pause' : 'play'}`} />
                         </span>
                     </div>
@@ -181,15 +187,15 @@ class Video extends Component {
                 {/* ${this.props.navControls ? 'show' : 'hide'} */}
                 <div className="video-controls d-flex flex-row justify-content-between">
                     <div className="left-controls">
-                        <button className="video-btm-play-icon" onClick={this.videoPlay}>
+                        <button className="video-btm-play-icon" onClick={()=>this.videoPlay(this.props.videoID)}>
                             <FontAwesomeIcon icon={`${this.state.videoPlaying ? 'pause' : 'play'}`} />
                         </button>
-                        <button className="video-btm-play-icon" onClick={this.muteVideo}>
+                        <button className="video-btm-play-icon" onClick={()=>this.muteVideo(this.props.videoID)}>
                             <FontAwesomeIcon icon={`${this.state.isMuted ? 'volume-down' : 'volume-up'}`} />
                         </button>
                     </div>
                     <div className="slider-controls align-self-center">
-                        <Slider onChange={this.onVideoProgressChange} min={0} max={this.state.maxTime} value={this.state.slideValue} />
+                        <Slider onChange={(e)=>this.onVideoProgressChange(e,this.props.videoID)} min={0} max={this.state.maxTime} value={this.state.slideValue} />
                     </div>
                     <div className="right-controls text-right">
                         <button className={`full-screen-btn ${this.props.videoEnlarged ? '':'hide'}`} onClick={() => this.toggleVideoModal()}>
